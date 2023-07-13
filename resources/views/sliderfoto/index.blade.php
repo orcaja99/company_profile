@@ -12,7 +12,7 @@
 
     <a href="{{ route('sliderfoto.create') }}" class="btn btn-primary mb-3">Tambah Slider Foto</a>
 
-    @if ($sliderFotos->isEmpty())
+    @if ($sliderFoto->isEmpty())
         <p>Tidak ada slider foto.</p>
     @else
         <table class="table">
@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($sliderFotos as $sliderFoto)
+                @foreach ($sliderFoto as $sliderFoto)
                     <tr>
                         <td>{{ $sliderFoto->id }}</td>
                         <td>
