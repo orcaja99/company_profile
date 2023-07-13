@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderFotoController;
-use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\beritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +30,11 @@ Route::put('/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'update'])-
 Route::delete('/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'destroy'])->name('sliderfoto.destroy');
 
 //halaman home
-//pengumuman
-Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman.index');
-Route::get('/pengumuman/create', [PengumumanController::class, 'create'])->name('pengumuman.create');
-Route::post('/pengumuman', [PengumumanController::class, 'store'])->name('pengumuman.store');
-Route::get('/pengumuman/{id}', [PengumumanController::class, 'show'])->name('pengumuman.show');
-Route::get('/pengumuman/{id}/edit', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
-Route::put('/pengumuman/{id}', [PengumumanController::class, 'update'])->name('pengumuman.update');
-Route::delete('/pengumuman/{id}', [PengumumanController::class, 'destroy'])->name('pengumuman.destroy');
+//berita
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
+Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
+Route::post('/berita', [BeritaController::class, 'store'])->name('berita.store');
+Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
+Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
+Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
+Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');

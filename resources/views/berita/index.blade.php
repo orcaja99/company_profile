@@ -1,12 +1,12 @@
-<!-- resources/views/pengumuman/index.blade.php -->
+<!-- resources/views/berita/index.blade.php -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daftar Pengumuman</title>
+    <title>Daftar berita</title>
 </head>
 <body>
-    <h1>Daftar Pengumuman</h1>
+    <h1>Daftar berita</h1>
 
     @if (session('success'))
     <div>
@@ -14,7 +14,7 @@
     </div>
     @endif
 
-    <a href="{{ route('pengumuman.create') }}">Tambah Pengumuman</a>
+    <a href="{{ route('berita.create') }}">Tambah berita</a>
 
     <table>
         <thead>
@@ -28,13 +28,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($pengumumans as $item)
+            @foreach($beritas as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->judul }}</td>
                 <td>
                     @if($item->gambar)
-                    <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar Pengumuman" width="100">
+                    <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar berita" width="100">
                     @else
                     Tidak ada gambar
                     @endif
@@ -42,9 +42,9 @@
                 <td>{{ $item->tanggal }}</td>
                 <td>{{ $item->keterangan }}</td>
                 <td>
-                    <a href="{{ route('pengumuman.show', $item->id) }}">Detail</a>
-                    <a href="{{ route('pengumuman.edit', $item->id) }}">Edit</a>
-                    <form action="{{ route('pengumuman.destroy', $item->id) }}" method="POST">
+                    <a href="{{ route('berita.show', $item->id) }}">Detail</a>
+                    <a href="{{ route('berita.edit', $item->id) }}">Edit</a>
+                    <form action="{{ route('berita.destroy', $item->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Hapus</button>

@@ -1,12 +1,12 @@
-<!-- resources/views/pengumuman/create.blade.php -->
+<!-- resources/views/berita/create.blade.php -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tambah Pengumuman</title>
+    <title>Tambah berita</title>
 </head>
 <body>
-    <h1>Tambah Pengumuman</h1>
+    <h1>Tambah berita</h1>
 
     @if ($errors->any())
     <div>
@@ -18,7 +18,7 @@
     </div>
     @endif
 
-    <form method="POST" action="{{ route('pengumuman.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('berita.store') }}" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="judul">Judul:</label>

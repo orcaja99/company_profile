@@ -1,12 +1,12 @@
-<!-- resources/views/pengumuman/edit.blade.php -->
+<!-- resources/views/berita/edit.blade.php -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Pengumuman</title>
+    <title>Edit berita</title>
 </head>
 <body>
-    <h1>Edit Pengumuman</h1>
+    <h1>Edit berita</h1>
 
     @if ($errors->any())
     <div>
@@ -18,27 +18,27 @@
     </div>
     @endif
 
-    <form method="POST" action="{{ route('pengumuman.update', $pengumuman->id) }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('berita.update', $berita->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div>
             <label for="judul">Judul:</label>
-            <input type="text" id="judul" name="judul" value="{{ $pengumuman->judul }}" required>
+            <input type="text" id="judul" name="judul" value="{{ $berita->judul }}" required>
         </div>
         <div>
             <label for="gambar">Gambar:</label>
             <input type="file" id="gambar" name="gambar">
-            @if($pengumuman->gambar)
-            <img src="{{ asset('storage/images/' . $pengumuman->gambar) }}" alt="Gambar Pengumuman" width="100">
+            @if($berita->gambar)
+            <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Gambar berita" width="100">
             @endif
         </div>
         <div>
             <label for="tanggal">Tanggal:</label>
-            <input type="date" id="tanggal" name="tanggal" value="{{ $pengumuman->tanggal }}" required>
+            <input type="date" id="tanggal" name="tanggal" value="{{ $berita->tanggal }}" required>
         </div>
         <div>
             <label for="keterangan">Keterangan:</label>
-            <textarea id="keterangan" name="keterangan" required>{{ $pengumuman->keterangan }}</textarea>
+            <textarea id="keterangan" name="keterangan" required>{{ $berita->keterangan }}</textarea>
         </div>
         <div>
             <button type="submit">Simpan</button>
