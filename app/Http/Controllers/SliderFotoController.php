@@ -10,9 +10,9 @@ class SliderFotoController extends Controller
 {
     public function index()
     {
-    $sliderFotos = SliderFoto::all();
+    $sliderFoto = SliderFoto::all();
 
-    return view('sliderfoto.index', compact('sliderFotos'));
+    return view('sliderfoto.index', compact('sliderFoto'));
 }
 
     public function create()
