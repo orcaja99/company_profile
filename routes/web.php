@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderFotoController;
 use App\Http\Controllers\beritaController;
+use App\Http\Controllers\PengumumanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,13 @@ Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show
 Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
 Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+
+//halaman home
+//pengumuman 
+Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman.index');
+Route::get('/pengumuman/create', [PengumumanController::class, 'create'])->name('pengumuman.create');
+Route::post('/pengumuman', [PengumumanController::class, 'store'])->name('pengumuman.store');
+Route::get('/pengumuman/{id}', [PengumumanController::class, 'show'])->name('pengumuman.show');
+Route::get('/pengumuman/{id}/edit', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
+Route::put('/pengumuman/{id}', [PengumumanController::class, 'update'])->name('pengumuman.update');
+Route::delete('/pengumuman/{id}', [PengumumanController::class, 'destroy'])->name('pengumuman.destroy');
