@@ -84,7 +84,7 @@ class BeritaController extends Controller
 
     public function destroy($id)
     {
-        $berita = berita::find($id);
+        $berita = Berita::find($id);
         Storage::delete('public/images/' . $berita->gambar); // Hapus gambar terkait berita
         $berita->delete();
 
