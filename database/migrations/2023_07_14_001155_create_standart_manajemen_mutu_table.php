@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengumumens', function (Blueprint $table) {
+        Schema::create('standartmanajemenmutus', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('gambar');
-            $table->date('tanggal');
+            $table->text('judul');
             $table->text('keterangan');
             $table->timestamps();
         });
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengumumans');
+        Schema::dropIfExists('standart_manajemen_mutu');
     }
 };

@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderFotoController;
-use App\Http\Controllers\beritaController;
-use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\PengumumenController;
+use App\Http\Controllers\StandartManajemenMutuController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,11 +43,20 @@ Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.up
 Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
 
 //halaman home
-//pengumuman 
-Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman.index');
-Route::get('/pengumuman/create', [PengumumanController::class, 'create'])->name('pengumuman.create');
-Route::post('/pengumuman', [PengumumanController::class, 'store'])->name('pengumuman.store');
-Route::get('/pengumuman/{id}', [PengumumanController::class, 'show'])->name('pengumuman.show');
-Route::get('/pengumuman/{id}/edit', [PengumumanController::class, 'edit'])->name('pengumuman.edit');
-Route::put('/pengumuman/{id}', [PengumumanController::class, 'update'])->name('pengumuman.update');
-Route::delete('/pengumuman/{id}', [PengumumanController::class, 'destroy'])->name('pengumuman.destroy');
+//pengumuman
+Route::get('/pengumuman', [PengumumenController::class, 'index'])->name('pengumumen.index');
+Route::get('/pengumuman/create', [PengumumenController::class, 'create'])->name('pengumumen.create');
+Route::post('/pengumuman', [PengumumenController::class, 'store'])->name('pengumumen.store');
+Route::get('/pengumuman/{id}', [PengumumenController::class, 'show'])->name('pengumumen.show');
+Route::get('/pengumuman/{id}/edit', [PengumumenController::class, 'edit'])->name('pengumumen.edit');
+Route::put('/pengumuman/{id}', [PengumumenController::class, 'update'])->name('pengumumen.update');
+Route::delete('/pengumuman/{id}', [PengumumenController::class, 'destroy'])->name('pengumumen.destroy');
+
+//halaman profil
+//standart manajemen mutu
+Route::get('/standartmanajemenmutu', [StandartManajemenMutuController::class, 'index'])->name('standartmanajemenmutu.index');
+Route::get('/standart_manajemen_mutu/create', [StandartManajemenMutuController::class, 'create'])->name('standartmanajemenmutu.create');
+Route::post('/standartmanajemenmutu', [StandartManajemenMutuController::class, 'store'])->name('standartmanajemenmutu.store');
+Route::get('/standartmanajemenmutu/{id}/edit', [StandartManajemenMutuController::class, 'edit'])->name('standartmanajemenmutu.edit');
+Route::patch('/standartmanajemenmutu/{id}', [StandartManajemenMutuController::class, 'update'])->name('standartmanajemenmutu.update');
+Route::delete('/standartmanajemenmutu/{id}', [StandartManajemenMutuController::class, 'destroy'])->name('standartmanajemenmutu.destroy');
