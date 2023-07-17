@@ -23,7 +23,7 @@ class BeritaController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'required',
-            'gambar' => 'required|image|max:2048', // Mendefinisikan validasi untuk gambar
+            'gambar' => 'required|image', // Mendefinisikan validasi untuk gambar
             'tanggal' => 'required|date',
             'keterangan' => 'required',
         ]);

@@ -1,44 +1,49 @@
-<!-- resources/views/berita/create.blade.php -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Tambah berita</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Tambah berita</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4">Tambah berita</h1>
 
-    @if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
+        <form method="POST" action="{{ route('berita.store') }}" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="judul">Judul:</label>
+                <input type="text" class="form-control" id="judul" name="judul" required>
+            </div>
+            <div class="form-group">
+                <label for="gambar">Gambar:</label>
+                <input type="file" class="form-control-file" id="gambar" name="gambar" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggal">Tanggal:</label>
+                <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+            </div>
+            <div class="form-group">
+                <label for="keterangan">Keterangan:</label>
+                <textarea class="form-control" id="keterangan" name="keterangan" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Tambah</button>
+            </div>
+        </form>
     </div>
-    @endif
 
-    <form method="POST" action="{{ route('berita.store') }}" enctype="multipart/form-data">
-        @csrf
-        <div>
-            <label for="judul">Judul:</label>
-            <input type="text" id="judul" name="judul" required>
-        </div>
-        <div>
-            <label for="gambar">Gambar:</label>
-            <input type="file" id="gambar" name="gambar" required>
-        </div>
-        <div>
-            <label for="tanggal">Tanggal:</label>
-            <input type="date" id="tanggal" name="tanggal" required>
-        </div>
-        <div>
-            <label for="keterangan">Keterangan:</label>
-            <textarea id="keterangan" name="keterangan" required></textarea>
-        </div>
-        <div>
-            <button type="submit">Tambah</button>
-        </div>
-    </form>
+    <!-- Include Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
