@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderFotoController;
 use App\Http\Controllers\beritaController;
 use App\Http\Controllers\PengumumenController;
+use App\Http\Controllers\SMTController;
+use App\Http\Controllers\SejarahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +51,24 @@ Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show
 Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
 Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+
+//profle
+//smt
+Route::get('/smt', [SMTController::class, 'index'])->name('smt.index');
+Route::get('/smt/create', [SMTController::class, 'create'])->name('smt.create');
+Route::post('/smt', [SMTController::class, 'store'])->name('smt.store');
+Route::get('/smt/{id}', [SMTController::class, 'show'])->name('smt.show');
+Route::get('/smt/{id}/edit', [SMTController::class, 'edit'])->name('smt.edit');
+Route::put('/smt/{id}', [SMTController::class, 'update'])->name('smt.update');
+Route::delete('/smt/{id}', [SMTController::class, 'destroy'])->name('smt.destroy');
+
+//prolie
+//sejarah singkat
+
+Route::get('/sejarah', [SejarahController::class, 'index'])->name('sejarah.index');
+Route::get('/sejarah/create', [SejarahController::class, 'create'])->name('sejarah.create');
+Route::post('/sejarah', [SejarahController::class, 'store'])->name('sejarah.store');
+Route::get('/sejarah/{id}', [SejarahController::class, 'show'])->name('sejarah.show');
+Route::get('/sejarah/{id}/edit', [SejarahController::class, 'edit'])->name('sejarah.edit');
+Route::put('/sejarah/{id}', [SejarahController::class, 'update'])->name('sejarah.update');
+Route::delete('/sejarah/{id}', [SejarahController::class, 'destroy'])->name('sejarah.destroy');

@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pengumumens', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('gambar');
             $table->date('tanggal');
             $table->text('keterangan');
             $table->timestamps();

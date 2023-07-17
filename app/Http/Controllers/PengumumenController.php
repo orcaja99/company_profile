@@ -23,7 +23,6 @@ class PengumumenController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'required',
-            'gambar' => 'required|image|max:2048', // Mendefinisikan validasi untuk gambar
             'tanggal' => 'required|date',
             'keterangan' => 'required',
         ]);

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pengumumen extends Model
 {
-    protected $fillable = ['judul', 'gambar', 'tanggal', 'keterangan'];
+    protected $fillable = ['judul', 'tanggal', 'keterangan'];
 }
 
