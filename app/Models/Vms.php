@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SliderFoto extends Model
+class Vms extends Model
 {
-    use HasFactory;
+    protected $table = 'vms';
 
     protected $fillable = [
-        'gambar',
+        'visi',
+        'misi',
+        'strategi',
     ];
 }
+

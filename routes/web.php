@@ -6,6 +6,11 @@ use App\Http\Controllers\beritaController;
 use App\Http\Controllers\PengumumenController;
 use App\Http\Controllers\SMTController;
 use App\Http\Controllers\SejarahController;
+use App\Http\Controllers\SOController;
+use App\Http\Controllers\JPController;
+use App\Http\Controllers\VmsController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +77,33 @@ Route::get('/sejarah/{id}', [SejarahController::class, 'show'])->name('sejarah.s
 Route::get('/sejarah/{id}/edit', [SejarahController::class, 'edit'])->name('sejarah.edit');
 Route::put('/sejarah/{id}', [SejarahController::class, 'update'])->name('sejarah.update');
 Route::delete('/sejarah/{id}', [SejarahController::class, 'destroy'])->name('sejarah.destroy');
+
+//halaman home
+//slider foto
+Route::get('/so', [SOController::class, 'index'])->name('so.index');
+Route::get('/so/create', [SOController::class, 'create'])->name('so.create');
+Route::post('/so', [SOController::class, 'store'])->name('so.store');
+Route::get('/so/{id}', [SOController::class, 'show'])->name('so.show');
+Route::get('/so/{id}/edit', [SOController::class, 'edit'])->name('so.edit');
+Route::put('/so/{id}', [SOController::class, 'update'])->name('so.update');
+Route::delete('/so/{id}', [SOController::class, 'destroy'])->name('so.destroy');
+
+//profile
+//jumlah pelanggan 
+//slider foto
+Route::get('/jp', [JPController::class, 'index'])->name('jp.index');
+Route::get('/jp/create', [JPController::class, 'create'])->name('jp.create');
+Route::post('/jp', [JPController::class, 'store'])->name('jp.store');
+Route::get('/jp/{id}', [JPController::class, 'show'])->name('jp.show');
+Route::get('/jp/{id}/edit', [JPController::class, 'edit'])->name('jp.edit');
+Route::put('/jp/{id}', [JPController::class, 'update'])->name('jp.update');
+Route::delete('/jp/{id}', [JPController::class, 'destroy'])->name('jp.destroy');
+
+//profile
+//visi misi dan startegi
+Route::get('/vms', [VmsController::class, 'index'])->name('vms.index');
+Route::get('/vms/create', [VmsController::class, 'create'])->name('vms.create');
+Route::post('/vms', [VmsController::class, 'store'])->name('vms.store');
+Route::get('/vms/{id}/edit', [VmsController::class, 'edit'])->name('vms.edit');
+Route::put('/vms/{id}', [VmsController::class, 'update'])->name('vms.update');
+Route::delete('/vms/{id}', [VmsController::class, 'destroy'])->name('vms.destroy');
