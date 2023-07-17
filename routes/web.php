@@ -9,6 +9,8 @@ use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\SOController;
 use App\Http\Controllers\JPController;
 use App\Http\Controllers\VmsController;
+use App\Http\Controllers\JPegawaiController;
+use App\Http\Controllers\PenghargaanController;
 
 
 
@@ -89,8 +91,7 @@ Route::put('/so/{id}', [SOController::class, 'update'])->name('so.update');
 Route::delete('/so/{id}', [SOController::class, 'destroy'])->name('so.destroy');
 
 //profile
-//jumlah pelanggan 
-//slider foto
+//jumlah pelanggan
 Route::get('/jp', [JPController::class, 'index'])->name('jp.index');
 Route::get('/jp/create', [JPController::class, 'create'])->name('jp.create');
 Route::post('/jp', [JPController::class, 'store'])->name('jp.store');
@@ -105,5 +106,25 @@ Route::get('/vms', [VmsController::class, 'index'])->name('vms.index');
 Route::get('/vms/create', [VmsController::class, 'create'])->name('vms.create');
 Route::post('/vms', [VmsController::class, 'store'])->name('vms.store');
 Route::get('/vms/{id}/edit', [VmsController::class, 'edit'])->name('vms.edit');
+Route::get('/vms/{id}', [VmsController::class, 'show'])->name('vms.show');
 Route::put('/vms/{id}', [VmsController::class, 'update'])->name('vms.update');
 Route::delete('/vms/{id}', [VmsController::class, 'destroy'])->name('vms.destroy');
+
+//profile
+//jumlah pelanggan
+Route::get('/jpegawai', [JPegawaiController::class, 'index'])->name('jpegawai.index');
+Route::get('/jpegawai/create', [JPegawaiController::class, 'create'])->name('jpegawai.create');
+Route::post('/jpegawai', [JPegawaiController::class, 'store'])->name('jpegawai.store');
+Route::get('/jpegawai/{id}', [JPegawaiController::class, 'show'])->name('jpegawai.show');
+Route::get('/jpegawai/{id}/edit', [JPegawaiController::class, 'edit'])->name('jpegawai.edit');
+Route::put('/jpegawai/{id}', [JPegawaiController::class, 'update'])->name('jpegawai.update');
+Route::delete('/jpegawai/{id}', [JPegawaiController::class, 'destroy'])->name('jpegawai.destroy');
+
+//penghargaan
+Route::get('/penghargaan', [PenghargaanController::class, 'index'])->name('penghargaan.index');
+Route::get('/penghargaan/create', [PenghargaanController::class, 'create'])->name('penghargaan.create');
+Route::post('/penghargaan', [PenghargaanController::class, 'store'])->name('penghargaan.store');
+Route::get('/penghargaan/{id}', [PenghargaanController::class, 'show'])->name('penghargaan.show');
+Route::get('/penghargaans/{id}/edit', [PenghargaanController::class, 'edit'])->name('penghargaan.edit');
+Route::put('/penghargaans/{id}', [PenghargaanController::class, 'update'])->name('penghargaan.update');
+Route::delete('/penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.destroy');

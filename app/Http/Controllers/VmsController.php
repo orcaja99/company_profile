@@ -6,6 +6,11 @@ namespace App\Http\Controllers;
 use App\Models\Vms;
 use Illuminate\Http\Request;
 
+namespace App\Http\Controllers;
+
+use App\Models\Vms;
+use Illuminate\Http\Request;
+
 class VmsController extends Controller
 {
     public function index()
@@ -56,14 +61,5 @@ class VmsController extends Controller
         Vms::destroy($id);
 
         return redirect()->route('vms.index')->with('success', 'Data VMS berhasil dihapus');
-    }
-}
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
