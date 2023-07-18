@@ -11,6 +11,11 @@ use App\Http\Controllers\JPController;
 use App\Http\Controllers\VmsController;
 use App\Http\Controllers\JPegawaiController;
 use App\Http\Controllers\PenghargaanController;
+use App\Http\Controllers\DSBController;
+use App\Http\Controllers\TKPController;
+use App\Http\Controllers\SABController;
+use App\Http\Controllers\IPAMController;
+use App\Http\Controllers\GIController;
 
 
 
@@ -128,3 +133,53 @@ Route::get('/penghargaan/{id}', [PenghargaanController::class, 'show'])->name('p
 Route::get('/penghargaans/{id}/edit', [PenghargaanController::class, 'edit'])->name('penghargaan.edit');
 Route::put('/penghargaans/{id}', [PenghargaanController::class, 'update'])->name('penghargaan.update');
 Route::delete('/penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.destroy');
+
+//info pelanggan
+//dsb
+Route::get('/dsb', [DSBController::class, 'index'])->name('dsb.index');
+Route::get('/dsb/create', [DSBController::class, 'create'])->name('dsb.create');
+Route::post('/dsb', [DSBController::class, 'store'])->name('dsb.store');
+Route::get('/dsb/{id}', [DSBController::class, 'show'])->name('dsb.show');
+Route::get('/dsb/{id}/edit', [DSBController::class, 'edit'])->name('dsb.edit');
+Route::put('/dsb/{id}', [DSBController::class, 'update'])->name('dsb.update');
+Route::delete('/dsb/{id}', [DSBController::class, 'destroy'])->name('dsb.destroy');
+
+//halaman info pelanggan
+//tabel klasifikasi pelanggan
+Route::get('/tkp', [TKPController::class, 'index'])->name('tkp.index');
+Route::get('/tkp/create', [TKPController::class, 'create'])->name('tkp.create');
+Route::post('/tkp', [TKPController::class, 'store'])->name('tkp.store');
+Route::get('/tkp/{id}', [TKPController::class, 'show'])->name('tkp.show');
+Route::get('/tkp/{id}/edit', [TKPController::class, 'edit'])->name('tkp.edit');
+Route::put('/tkp/{id}', [TKPController::class, 'update'])->name('tkp.update');
+Route::delete('/tkp/{id}', [TKPController::class, 'destroy'])->name('tkp.destroy');
+
+//halaman info pelanggan
+//tabel klasifikasi pelanggan
+Route::get('/sab', [SABController::class, 'index'])->name('sab.index');
+Route::get('/sab/create', [SABController::class, 'create'])->name('sab.create');
+Route::post('/sab', [SABController::class, 'store'])->name('sab.store');
+Route::get('/sab/{id}', [SABController::class, 'show'])->name('sab.show');
+Route::get('/sab/{id}/edit', [SABController::class, 'edit'])->name('sab.edit');
+Route::put('/sab/{id}', [SABController::class, 'update'])->name('sab.update');
+Route::delete('/sab/{id}', [SABController::class, 'destroy'])->name('sab.destroy');
+
+//halaman Infrastuktur
+//sumber air baku
+Route::get('/ipam', [IPAMController::class, 'index'])->name('ipam.index');
+Route::get('/ipam/create', [IPAMController::class, 'create'])->name('ipam.create');
+Route::post('/ipam', [IPAMController::class, 'store'])->name('ipam.store');
+Route::get('/ipam/{id}', [IPAMController::class, 'show'])->name('ipam.show');
+Route::get('/ipam/{id}/edit', [IPAMController::class, 'edit'])->name('ipam.edit');
+Route::put('/ipam/{id}', [IPAMController::class, 'update'])->name('ipam.update');
+Route::delete('/ipam/{id}', [IPAMController::class, 'destroy'])->name('ipam.destroy');
+
+//halaman Infrastuktur
+//galeri ipa
+Route::get('/gi', [GIController::class, 'index'])->name('gi.index');
+Route::get('/gi/create', [GIController::class, 'create'])->name('gi.create');
+Route::post('/gi', [GIController::class, 'store'])->name('gi.store');
+Route::get('/gi/{id}', [GIController::class, 'show'])->name('gi.show');
+Route::get('/gi/{id}/edit', [GIController::class, 'edit'])->name('gi.edit');
+Route::put('/gi/{id}', [GIController::class, 'update'])->name('gi.update');
+Route::delete('/gi/{id}', [GIController::class, 'destroy'])->name('gi.destroy');
