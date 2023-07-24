@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderFotoController;
 use App\Http\Controllers\beritaController;
+use App\Http\Controllers\BeritapController;
+use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\PengumumenController;
 use App\Http\Controllers\SMTController;
 use App\Http\Controllers\SejarahController;
@@ -183,3 +185,23 @@ Route::get('/gi/{id}', [GIController::class, 'show'])->name('gi.show');
 Route::get('/gi/{id}/edit', [GIController::class, 'edit'])->name('gi.edit');
 Route::put('/gi/{id}', [GIController::class, 'update'])->name('gi.update');
 Route::delete('/gi/{id}', [GIController::class, 'destroy'])->name('gi.destroy');
+
+//halaman berita
+//berita peristiwa
+Route::get('/beritap', [BeritapController::class, 'index'])->name('beritap.index');
+Route::get('/beritap/create', [BeritapController::class, 'create'])->name('beritap.create');
+Route::post('/beritap', [BeritapController::class, 'store'])->name('beritap.store');
+Route::get('/beritap/{id}', [BeritapController::class, 'show'])->name('beritap.show');
+Route::get('/beritap/{id}/edit', [BeritapController::class, 'edit'])->name('beritap.edit');
+Route::put('/beritap/{id}', [BeritapController::class, 'update'])->name('beritap.update');
+Route::delete('/beritap/{id}', [BeritapController::class, 'destroy'])->name('beritap.destroy');
+
+//halaman kegiatan
+//kegiatan
+Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
+Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
+Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store');
+Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
+Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
+Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
+Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
