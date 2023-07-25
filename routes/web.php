@@ -19,6 +19,10 @@ use App\Http\Controllers\SABController;
 use App\Http\Controllers\IPAMController;
 use App\Http\Controllers\GIController;
 
+//login
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\AdminDashboardController;
+
 
 
 /*
@@ -205,3 +209,14 @@ Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiata
 Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
 Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
 Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
+
+
+//halaman login
+Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [AdminAuthController::class, 'login']);
+Route::post('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+
+// Route untuk menampilkan dashboard admin setelah login berhasil
+Route::get('admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+

@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label for="sumber">Sumber:</label>
-                <textarea class="form-control" id="sumber" name="sumber" required>{{ $kegiatan->keterangan }}</textarea>
+                <textarea class="form-control" id="sumber" name="sumber" required>{{ $kegiatan->Sumber }}</textarea>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan</button>

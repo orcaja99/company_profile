@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Tambah berita peristiwa</h1>
+        <h1 class="mb-4">Tambah kegiatan</h1>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -26,16 +26,16 @@
                 <input type="text" class="form-control" id="judul" name="judul" required>
             </div>
             <div class="form-group">
+                <label for="gambar">Gambar:</label>
+                <input type="file" class="form-control-file" id="gambar" name="gambar" required>
+            </div>
+            <div class="form-group">
                 <label for="tanggal">Tanggal:</label>
                 <input type="date" class="form-control" id="tanggal" name="tanggal" required>
             </div>
             <div class="form-group">
                 <label for="keterangan">Keterangan:</label>
                 <textarea class="form-control" id="keterangan" name="keterangan" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="sumber">Sumber:</label>
-                <textarea class="form-control" id="sumber" name="sumber" required></textarea>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Tambah</button>

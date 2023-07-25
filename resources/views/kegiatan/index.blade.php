@@ -58,6 +58,7 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->judul }}</td>
                         <td>{{ $item->tanggal }}</td>
+                        <td>{{ $item->keterangan }}</td>
                         <td>{{ $item->sumber }}</td>
                         <td class="action-btns">
                             <a href="{{ route('kegiatan.show', $item->id) }}" class="btn btn-info">Detail</a>
