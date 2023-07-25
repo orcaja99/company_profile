@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Storage;
 
 class KegiatanController extends Controller
 {
+    public function __construct()
+    {
+        // Gunakan middleware 'admin.auth' pada semua metode kecuali 'index' dan 'show'
+        $this->middleware('admin.auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
         $kegiatans = Kegiatan::all();
@@ -60,7 +66,7 @@ class KegiatanController extends Controller
             'sumber' => 'required',
         ]);
 
-        $kegiatan = kegiatan::find($id);
+        $kegiatan = Kegiatan::find($id);
         $kegiatan->judul = $validatedData['judul'];
         $kegiatan->tanggal = $validatedData['tanggal'];
         $kegiatan->keterangan = $validatedData['keterangan'];
@@ -72,7 +78,7 @@ class KegiatanController extends Controller
 
     public function destroy($id)
     {
-        $kegiatan = kegiatan::find($id);
+        $kegiatan = Kegiatan::find($id);
         $kegiatan->delete();
 
         return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil dihapus.');

@@ -202,14 +202,22 @@ Route::delete('/beritap/{id}', [BeritapController::class, 'destroy'])->name('ber
 
 //halaman kegiatan
 //kegiatan
-Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
-Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
-Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store');
-Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
-Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
-Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
-Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
-
+// Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
+// Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
+// Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store');
+// Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
+// Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
+// Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
+// Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
+Route::group(['middleware' => 'admin.login'], function () {
+    Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index')->middleware('admin.login');
+    Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create')->middleware('admin.auth');
+    Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store')->middleware('admin.auth');
+    Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show')->middleware('admin.auth');
+    Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit')->middleware('admin.auth');
+    Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update')->middleware('admin.auth');
+    Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy')->middleware('admin.auth');
+});
 
 //halaman login
 Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
