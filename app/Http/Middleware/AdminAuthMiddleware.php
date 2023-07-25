@@ -17,4 +17,6 @@ class AdminAuthMiddleware
             return redirect()->route('admin.login');
         }
     }
+
+
 }

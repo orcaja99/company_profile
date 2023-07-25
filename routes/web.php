@@ -40,6 +40,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'admin.login'], function () {
 //halaman home
 //slider foto
 Route::get('/sliderfoto', [SliderFotoController::class, 'index'])->name('sliderfoto.index');
@@ -192,31 +193,23 @@ Route::delete('/gi/{id}', [GIController::class, 'destroy'])->name('gi.destroy');
 
 //halaman berita
 //berita peristiwa
-Route::get('/beritap', [BeritapController::class, 'index'])->name('beritap.index');
-Route::get('/beritap/create', [BeritapController::class, 'create'])->name('beritap.create');
-Route::post('/beritap', [BeritapController::class, 'store'])->name('beritap.store');
-Route::get('/beritap/{id}', [BeritapController::class, 'show'])->name('beritap.show');
-Route::get('/beritap/{id}/edit', [BeritapController::class, 'edit'])->name('beritap.edit');
-Route::put('/beritap/{id}', [BeritapController::class, 'update'])->name('beritap.update');
-Route::delete('/beritap/{id}', [BeritapController::class, 'destroy'])->name('beritap.destroy');
 
-//halaman kegiatan
-//kegiatan
-// Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
-// Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
-// Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store');
-// Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
-// Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
-// Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
-// Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
-Route::group(['middleware' => 'admin.login'], function () {
-    Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index')->middleware('admin.login');
-    Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create')->middleware('admin.auth');
-    Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store')->middleware('admin.auth');
-    Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show')->middleware('admin.auth');
-    Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit')->middleware('admin.auth');
-    Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update')->middleware('admin.auth');
-    Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy')->middleware('admin.auth');
+    Route::get('/beritap', [BeritapController::class, 'index'])->name('beritap.index');
+    Route::get('/beritap/create', [BeritapController::class, 'create'])->name('beritap.create');
+    Route::post('/beritap', [BeritapController::class, 'store'])->name('beritap.store');
+    Route::get('/beritap/{id}', [BeritapController::class, 'show'])->name('beritap.show');
+    Route::get('/beritap/{id}/edit', [BeritapController::class, 'edit'])->name('beritap.edit');
+    Route::put('/beritap/{id}', [BeritapController::class, 'update'])->name('beritap.update');
+    Route::delete('/beritap/{id}', [BeritapController::class, 'destroy'])->name('beritap.destroy');
+
+
+    Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
+    Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
+    Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store');
+    Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
+    Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
+    Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
+    Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
 });
 
 //halaman login
