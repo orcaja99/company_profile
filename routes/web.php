@@ -230,3 +230,7 @@ Route::get('/customer/berita/{id}', [CustomerController::class, 'berita_show'])-
 //berita peristiwa
 Route::get('/customer/beritap', [CustomerController::class, 'beritap_index'])->name('customer.beritap.beritap.index');
 Route::get('/customer/beritap/{id}', [CustomerController::class, 'beritap_show'])->name('customer.beritap.beritap.show');
+
+//cara daftar sambungan baru
+Route::get('/customer/dsb', [CustomerController::class, 'dsb_index'])->name('customer.dsb.dsb.index');
+Route::get('/customer/dsb/{id}', [CustomerController::class, 'dsb_show'])->name('customer.dsb.dsb.show');

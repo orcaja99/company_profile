@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Beritap;
+use App\Models\DSB;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -32,7 +34,20 @@ class CustomerController extends Controller
         $beritap = Beritap::find($id);
         return view('customer.beritap.detail_beritap', compact('beritap'));
     }
+
+    public function dsb_index()
+    {
+        $dsb = DSB::all();
+        return view('customer.dsb.dsb', compact('dsb'));
+    }
+
+    public function show($id)
+    {
+        $dsb = DSB::find($id);
+        return view('customer.dsb.dsb', compact('dsb'));
+    }
 }
+
 
 
 
