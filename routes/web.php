@@ -19,11 +19,12 @@ use App\Http\Controllers\SABController;
 use App\Http\Controllers\IPAMController;
 use App\Http\Controllers\GIController;
 
-//login
+//login admin
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminDashboardController;
 
-
+//halaman custumer
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -221,3 +222,11 @@ Route::post('admin/logout', [AdminAuthController::class, 'logout'])->name('admin
 // Route untuk menampilkan dashboard admin setelah login berhasil
 Route::get('admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
+//halaman custumer
+//berita arikel
+Route::get('/customer/berita', [CustomerController::class, 'berita_index'])->name('customer.berita.berita.index');
+Route::get('/customer/berita/{id}', [CustomerController::class, 'berita_show'])->name('customer.berita.berita.show');
+
+//berita peristiwa
+Route::get('/customer/beritap', [CustomerController::class, 'beritap_index'])->name('customer.beritap.beritap.index');
+Route::get('/customer/beritap/{id}', [CustomerController::class, 'beritap_show'])->name('customer.beritap.beritap.show');
