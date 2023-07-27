@@ -1,8 +1,6 @@
-<!-- resources/views/sejarah/edit.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Edit Data Sejarah</h1>
 
     <form action="{{ route('sejarah.update', $sejarah->id) }}" method="POST">

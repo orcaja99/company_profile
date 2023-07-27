@@ -1,7 +1,6 @@
-<!-- resources/views/tkp/create.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Tambah Tabel klasifikasi pelanggan baru</h1>
 
     @if ($errors->any())

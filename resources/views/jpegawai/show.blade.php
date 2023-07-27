@@ -1,8 +1,6 @@
-<!-- resources/views/jpegawai/show.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Detail Data JPegawai</h1>
 
     <div class="card">

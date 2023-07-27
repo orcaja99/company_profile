@@ -1,7 +1,6 @@
-<!-- resources/views/gi/delete.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Konfirmasi Hapus Galeri IPA</h1>
 
     <div class="alert alert-danger">

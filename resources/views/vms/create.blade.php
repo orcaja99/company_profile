@@ -1,8 +1,6 @@
-<!-- resources/views/vms/create.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Tambah Data VMS</h1>
 
     <form action="{{ route('vms.store') }}" method="POST">

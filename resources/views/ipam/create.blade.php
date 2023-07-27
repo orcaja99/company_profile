@@ -1,7 +1,6 @@
-<!-- resources/views/ipam/create.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Tambah Instalasi Pengolahaan Air Minum</h1>
 
     @if ($errors->any())

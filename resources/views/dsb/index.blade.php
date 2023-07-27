@@ -1,8 +1,6 @@
-<!-- resources/views/dsb/index.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Cara Daftar Sambungan Baru</h1>
 
     <a href="{{ route('dsb.create') }}" class="btn btn-primary mb-3">Tambah cara daftar sambungan baru</a>

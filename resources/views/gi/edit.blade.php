@@ -1,7 +1,6 @@
-<!-- resources/views/gi/edit.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Edit Galeri IPA</h1>
 
     @if ($errors->any())

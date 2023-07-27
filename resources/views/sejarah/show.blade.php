@@ -1,8 +1,6 @@
-<!-- resources/views/sejarah/show.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Detail Sejarah</h1>
 
     <table class="table">

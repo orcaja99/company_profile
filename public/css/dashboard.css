@@ -1,0 +1,41 @@
+.sidebar {
+    min-height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+  }
+.main-content {
+    min-height: 100vh;
+  }
+  /* Style the sidebar links */
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+  }
+.nav-item a:hover {
+    background-color: white;
+    color: black;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+.title{
+      text-align: center;
+  }
+
+.title-line {
+    border-top: 1px solid white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+  }
+
+.logout{
+
+  margin: auto;
+  color: red;
+  }
+
+  .nav-item .active {
+    background-color: lightblue;
+  }

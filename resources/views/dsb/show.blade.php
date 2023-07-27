@@ -1,8 +1,6 @@
-<!-- resources/views/dsb/show.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Detail dsb</h1>
 
     <p><strong>ID:</strong> {{ $dsb->id }}</p>

@@ -1,8 +1,6 @@
-<!-- resources/views/vms/index.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Data VMS</h1>
 
     <a href="{{ route('vms.create') }}" class="btn btn-primary mb-3">Tambah Data</a>

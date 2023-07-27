@@ -1,8 +1,6 @@
-<!-- resources/views/smt/index.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Daftar SMT</h1>
 
     <a href="{{ route('smt.create') }}" class="btn btn-primary mb-3">Tambah SMT</a>
