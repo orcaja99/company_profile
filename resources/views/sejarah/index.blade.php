@@ -1,8 +1,6 @@
-<!-- resources/views/sejarah/index.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Data Sejarah</h1>
 
     <a href="{{ route('sejarah.create') }}" class="btn btn-primary">Tambah Data</a>

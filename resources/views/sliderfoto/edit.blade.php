@@ -1,7 +1,6 @@
-<!-- resources/views/sliderfoto/edit.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Edit Slider Foto</h1>
 
     @if ($errors->any())

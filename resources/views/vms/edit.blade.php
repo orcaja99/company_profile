@@ -1,8 +1,6 @@
-<!-- resources/views/vms/edit.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Edit Data VMS</h1>
 
     <form action="{{ route('vms.update', $vms->id) }}" method="POST">

@@ -1,8 +1,6 @@
-<!-- resources/views/dsb/edit.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Edit dsb</h1>
 
     @if ($errors->any())

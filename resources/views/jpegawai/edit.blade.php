@@ -1,7 +1,6 @@
-<!-- rejpegawaiurces/views/jpegawai/edit.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Edit Jumlah pegawai</h1>
 
     @if ($errors->any())

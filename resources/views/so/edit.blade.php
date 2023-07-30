@@ -1,7 +1,6 @@
-<!-- resources/views/so/edit.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Edit Stuktur Organisasi</h1>
 
     @if ($errors->any())

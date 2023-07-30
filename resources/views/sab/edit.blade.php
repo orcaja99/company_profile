@@ -1,7 +1,6 @@
-<!-- resources/views/sab/edit.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Edit Sumber Air Baku</h1>
 
     @if ($errors->any())

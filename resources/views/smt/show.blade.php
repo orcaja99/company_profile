@@ -1,8 +1,6 @@
-<!-- resources/views/smt/show.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Detail SMT</h1>
 
     <p><strong>ID:</strong> {{ $smt->id }}</p>

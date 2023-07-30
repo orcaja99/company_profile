@@ -1,7 +1,6 @@
-<!-- resources/views/sliderfoto/create.blade.php -->
-@extends('layouts.app')
+@extends('admin.dashboard')
 
-@section('content')
+@section('admin-content')
     <h1>Tambah Slider Foto Baru</h1>
 
     @if ($errors->any())

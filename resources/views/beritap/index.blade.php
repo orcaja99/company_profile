@@ -1,36 +1,18 @@
+@extends('admin.dashboard')
 
-@include('layouts.navbar')
+@section('admin-content')
 <!DOCTYPE html>
 <html>
 <head>
     <br />
     <title>Daftar beritap</title>
-    <!-- Include Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Optional custom styles for better presentation -->
-    <style>
-        body {
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        img {
-            max-width: 100px;
-            max-height: 100px;
-        }
-        .action-btns {
-            white-space: nowrap;
-        }
-    </style>
+
 </head>
 <body>
     <div class="container mt-4">
-        <h1>Daftar beritap</h1>
+        <h1>Daftar berita peristiwa</h1>
 
         @if (session('success'))
         <div class="alert alert-success mt-3">
@@ -81,8 +63,4 @@
             </table>
         </div>
     </div>
-
-    <!-- Include Bootstrap JS -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection

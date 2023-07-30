@@ -1,8 +1,6 @@
-<!-- resources/views/smt/create.blade.php -->
+@extends('admin.dashboard')
 
-@extends('layouts.app')
-
-@section('content')
+@section('admin-content')
     <h1>Tambah SMT</h1>
 
     @if ($errors->any())
