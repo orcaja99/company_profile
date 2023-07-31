@@ -10,6 +10,7 @@
                     <h2>{{ $beritap->judul }}</h2>
                     <img src="{{ asset('storage/images/' . $beritap->gambar) }}" alt="Gambar beritap">
                     <p>{{ $beritap->tanggal }}</p>
+                    <p>{{ $beritap->keterangan }}</p>
                     <a href="{{ route('customer.beritap.beritap.show', ['id' => $beritap->id]) }}">Lihat Detail</a>
                 </li>
             @endforeach

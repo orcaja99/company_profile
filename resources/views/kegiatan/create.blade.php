@@ -41,6 +41,10 @@
                     <textarea class="form-control" id="keterangan" name="keterangan" required></textarea>
                 </div>
                 <div class="form-group">
+                    <label for="sumber">Sumber:</label>
+                    <textarea class="form-control" id="sumber" name="sumber" required></textarea>
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Tambah</button>
                 </div>
             </form>

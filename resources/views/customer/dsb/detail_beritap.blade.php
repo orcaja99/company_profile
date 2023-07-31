@@ -4,10 +4,8 @@
 @section('content')
     <div class="container">
         <h1>Detail Berita</h1>
-        <h2>{{ $beritap->judul }}</h2>
-        <img src="{{ asset('storage/images/' . $beritap->gambar) }}" alt="Gambar Berita">
-        <p>Tanggal: {{ $beritap->tanggal }}</p>
+        <h2>{{ $dsb->judul }}</h2>
         <p>{{ $beritap->keterangan }}</p>
-        <a href="{{ route('customer.beritap.beritap.index') }}">Kembali ke Daftar Berita</a>
+        <a href="{{ route('customer.dsb.dsb.index') }}">Kembali ke Daftar Berita</a>
     </div>
 @endsection

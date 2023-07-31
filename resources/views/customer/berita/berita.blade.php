@@ -8,8 +8,9 @@
             @foreach($beritas as $berita)
                 <li>
                     <h2>{{ $berita->judul }}</h2>
-                    <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Gambar Berita">
+                    <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Gambar berita">
                     <p>{{ $berita->tanggal }}</p>
+                    <p>{{ $berita->keterangan }}</p>
                     <a href="{{ route('customer.berita.berita.show', ['id' => $berita->id]) }}">Lihat Detail</a>
                 </li>
             @endforeach

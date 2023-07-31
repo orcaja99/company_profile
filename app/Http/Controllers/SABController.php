@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\SAB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 
 class SABController extends Controller
 {
@@ -23,7 +22,7 @@ class SABController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'gambar' => 'required|image',
         ]);
 
         $gambar = $request->file('gambar');

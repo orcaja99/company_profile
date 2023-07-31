@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Beritap;
 use App\Models\DSB;
+use App\Models\Kegiatan;
+use App\Models\SAB;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -41,10 +43,28 @@ class CustomerController extends Controller
         return view('customer.dsb.dsb', compact('dsb'));
     }
 
-    public function show($id)
+    public function dsb_show($id)
     {
         $dsb = DSB::find($id);
         return view('customer.dsb.dsb', compact('dsb'));
+    }
+
+    public function kegiatan_index()
+    {
+        $kegiatans = Kegiatan::all();
+        return view('customer.kegiatan.kegiatan', compact('kegiatans'));
+    }
+
+    public function kegiatan_show($id)
+    {
+        $kegiatan = Kegiatan::find($id);
+        return view('customer.kegiatan.detail_kegiatan', compact('kegiatan'));
+    }
+
+    public function sab_index()
+    {
+        $sab = SAB::all();
+        return view('customer.sab.sab', compact('sab'));
     }
 }
 

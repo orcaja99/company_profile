@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Storage;
 
 class KegiatanController extends Controller
 {
-    public function __construct()
-    {
-        // Gunakan middleware 'admin.auth' pada semua metode kecuali 'index' dan 'show'
-        $this->middleware('admin.auth')->except(['index', 'show']);
-    }
+    // public function __construct()
+    // {
+    //     // Gunakan middleware 'admin.auth' pada semua metode kecuali 'index' dan 'show'
+    //     $this->middleware('admin.auth')->except(['index', 'show']);
+    // }
 
     public function index()
     {
@@ -30,14 +30,27 @@ class KegiatanController extends Controller
         $validatedData = $request->validate([
             'judul' => 'required',
             'tanggal' => 'required|date',
+            'gambar' => 'required|image',
             'keterangan' => 'required',
             'sumber' => 'required',
         ]);
 
         // Simpan data kegiatan ke database
+        // $kegiatan = new Kegiatan;
+        // $kegiatan->judul = $validatedData['judul'];
+        // $kegiatan->tanggal = $validatedData['tanggal'];
+        // $kegiatan->keterangan = $validatedData['keterangan'];
+        // $kegiatan->sumber = $validatedData['sumber'];
+        // $kegiatan->save();
+        $gambarPath = $request->file('gambar')->store('public/images');
+        $gambarNama = basename($gambarPath);
+
+        // Simpan data kegiatan ke database
         $kegiatan = new Kegiatan;
         $kegiatan->judul = $validatedData['judul'];
         $kegiatan->tanggal = $validatedData['tanggal'];
+        $kegiatan->keterangan = $validatedData['keterangan'];
+        $kegiatan->gambar = $gambarNama;
         $kegiatan->keterangan = $validatedData['keterangan'];
         $kegiatan->sumber = $validatedData['sumber'];
         $kegiatan->save();
@@ -62,6 +75,7 @@ class KegiatanController extends Controller
         $validatedData = $request->validate([
             'judul' => 'required',
             'tanggal' => 'required|date',
+            'gambar' => 'nullable|image|max:2048',
             'keterangan' => 'required',
             'sumber' => 'required',
         ]);
@@ -69,6 +83,15 @@ class KegiatanController extends Controller
         $kegiatan = Kegiatan::find($id);
         $kegiatan->judul = $validatedData['judul'];
         $kegiatan->tanggal = $validatedData['tanggal'];
+
+        // Jika ada gambar baru diupload, hapus gambar lama dan upload gambar baru
+        if ($request->hasFile('gambar')) {
+            $gambarPath = $request->file('gambar')->store('public/images');
+            $gambarNama = basename($gambarPath);
+            Storage::delete('public/images/' . $kegiatan->gambar); // Hapus gambar lama
+            $kegiatan->gambar = $gambarNama;
+        }
+
         $kegiatan->keterangan = $validatedData['keterangan'];
         $kegiatan->sumber = $validatedData['sumber'];
         $kegiatan->save();
@@ -79,6 +102,7 @@ class KegiatanController extends Controller
     public function destroy($id)
     {
         $kegiatan = Kegiatan::find($id);
+        Storage::delete('public/images/' . $kegiatan->gambar); 
         $kegiatan->delete();
 
         return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil dihapus.');

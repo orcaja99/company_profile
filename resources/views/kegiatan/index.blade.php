@@ -28,6 +28,7 @@
                             <th>ID</th>
                             <th>Judul</th>
                             <th>Tanggal</th>
+                            <th>Gambar</th>
                             <th>Keterangan</th>
                             <th>Sumber</th>
                             <th class="action-btns">Aksi</th>
@@ -39,6 +40,13 @@
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->judul }}</td>
                             <td>{{ $item->tanggal }}</td>
+                            <td>
+                            @if($item->gambar)
+                            <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar beritap">
+                            @else
+                            Tidak ada gambar
+                            @endif
+                        </td>
                             <td>{{ $item->keterangan }}</td>
                             <td>{{ $item->sumber }}</td>
                             <td class="action-btns">

@@ -50,6 +50,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('customer.dsb.dsb.index') }}"> Cara Daftar Sambungan </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('customer.kegiatan.kegiatan.index') }}"> Kegiatan </a>
+                </li>
             </ul>
         </div>
     </div>

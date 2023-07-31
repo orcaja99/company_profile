@@ -222,6 +222,7 @@ Route::post('admin/logout', [AdminAuthController::class, 'logout'])->name('admin
 // Route untuk menampilkan dashboard admin setelah login berhasil
 Route::get('admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //halaman custumer
 //berita arikel
 Route::get('/customer/berita', [CustomerController::class, 'berita_index'])->name('customer.berita.berita.index');
@@ -234,3 +235,10 @@ Route::get('/customer/beritap/{id}', [CustomerController::class, 'beritap_show']
 //cara daftar sambungan baru
 Route::get('/customer/dsb', [CustomerController::class, 'dsb_index'])->name('customer.dsb.dsb.index');
 Route::get('/customer/dsb/{id}', [CustomerController::class, 'dsb_show'])->name('customer.dsb.dsb.show');
+
+//kegiatan 
+Route::get('/customer/kegiatan', [CustomerController::class, 'kegiatan_index'])->name('customer.kegiatan.kegiatan.index');
+Route::get('/customer/kegiatan/{id}', [CustomerController::class, 'kegiatan_show'])->name('customer.kegiatan.kegiatan.show');
+
+//SAB
+Route::get('/customer/sab', [CustomerController::class, 'sab_index'])->name('customer.sab.sab');

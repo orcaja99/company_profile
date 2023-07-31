@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Daftar Berita</h1>
+        <h1>Daftar Sambungan</h1>
         <ul>
             @foreach($dsb as $data)
                 <li>
