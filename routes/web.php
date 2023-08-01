@@ -242,3 +242,9 @@ Route::get('/customer/kegiatan/{id}', [CustomerController::class, 'kegiatan_show
 
 //SAB
 Route::get('/customer/sab', [CustomerController::class, 'sab_index'])->name('customer.sab.sab.index');
+
+//IPAM
+Route::get('/customer/ipam', [CustomerController::class, 'ipam_index'])->name('customer.ipam.ipam.index');
+
+//Galeri IPA
+Route::get('/customer/gi', [CustomerController::class, 'gi_index'])->name('customer.gi.gi.index');

@@ -7,6 +7,8 @@ use App\Models\Beritap;
 use App\Models\DSB;
 use App\Models\Kegiatan;
 use App\Models\SAB;
+use App\Models\IPAM;
+use App\Models\GI;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -65,6 +67,18 @@ class CustomerController extends Controller
     {
         $sab = SAB::all();
         return view('customer.sab.sab', compact('sab'));
+    }
+
+    public function ipam_index()
+    {
+        $ipam = IPAM::all();
+        return view('customer.ipam.ipam', compact('ipam'));
+    }
+
+    public function gi_index()
+    {
+        $gi = Gi::all();
+        return view('customer.gi.gi', compact('gi'));
     }
 }
 
