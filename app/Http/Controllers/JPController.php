@@ -23,22 +23,22 @@ class JPController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,jpf,svg|max:2048',
         ]);
 
         $gambar = $request->file('gambar');
-        $gambarPath = $gambar->store('slider_foto', 'public');
+        $gambarPath = $gambar->store('jp', 'public');
 
         jp::create([
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('jp.index')->with('success', 'Slider foto berhasil ditambahkan.');
+        return redirect()->route('jp.index')->with('success', 'Struktur Organsisasi ditambahkan.');
     }
 
     public function edit($id)
     {
-        $jp = JP::findOrFail($id);
+        $jp = jp::findOrFail($id);
 
         return view('jp.edit', compact('jp'));
     }
@@ -46,21 +46,21 @@ class JPController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,jpf,svg|max:2048',
         ]);
 
-        $jp = JP::findOrFail($id);
+        $jp = jp::findOrFail($id);
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
-            $gambarPath = $gambar->store('slider_foto', 'public');
+            $gambarPath = $gambar->store('jp', 'public');
             Storage::disk('public')->delete($jp->gambar);
             $jp->gambar = $gambarPath;
         }
 
         $jp->save();
 
-        return redirect()->route('jp.index')->with('success', 'Slider foto berhasil diperbarui.');
+        return redirect()->route('jp.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class JPController extends Controller
         Storage::disk('public')->delete($jp->gambar);
         $jp->delete();
 
-        return redirect()->route('jp.index')->with('success', 'Slider foto berhasil dihapus.');
+        return redirect()->route('jp.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
     }
 }

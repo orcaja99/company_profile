@@ -23,22 +23,22 @@ class SOController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,sof,svg|max:2048',
         ]);
 
         $gambar = $request->file('gambar');
-        $gambarPath = $gambar->store('slider_foto', 'public');
+        $gambarPath = $gambar->store('so', 'public');
 
         so::create([
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('so.index')->with('success', 'Slider foto berhasil ditambahkan.');
+        return redirect()->route('so.index')->with('success', 'Struktur Organsisasi ditambahkan.');
     }
 
     public function edit($id)
     {
-        $so = SO::findOrFail($id);
+        $so = so::findOrFail($id);
 
         return view('so.edit', compact('so'));
     }
@@ -46,21 +46,21 @@ class SOController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,sof,svg|max:2048',
         ]);
 
         $so = SO::findOrFail($id);
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
-            $gambarPath = $gambar->store('slider_foto', 'public');
+            $gambarPath = $gambar->store('so', 'public');
             Storage::disk('public')->delete($so->gambar);
             $so->gambar = $gambarPath;
         }
 
         $so->save();
 
-        return redirect()->route('so.index')->with('success', 'Slider foto berhasil diperbarui.');
+        return redirect()->route('so.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class SOController extends Controller
         Storage::disk('public')->delete($so->gambar);
         $so->delete();
 
-        return redirect()->route('so.index')->with('success', 'Slider foto berhasil dihapus.');
+        return redirect()->route('so.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
     }
 }

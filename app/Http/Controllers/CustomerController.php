@@ -9,6 +9,11 @@ use App\Models\Kegiatan;
 use App\Models\SAB;
 use App\Models\IPAM;
 use App\Models\GI;
+use App\Models\TKP;
+use App\Models\Penghargaan;
+use App\Models\SO;
+use App\Models\JP;
+use App\Models\JPegawai;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -79,6 +84,42 @@ class CustomerController extends Controller
     {
         $gi = Gi::all();
         return view('customer.gi.gi', compact('gi'));
+    }
+
+    public function tkp_index()
+    {
+        $tkp = TKP::all();
+        return view('customer.tkp.tkp', compact('tkp'));
+    }
+
+    public function penghargaan_index()
+    {
+        $penghargaan = Penghargaan::all();
+        return view('customer.penghargaan.penghargaan', compact('penghargaan'));
+    }
+
+    public function penghargaan_show($id)
+    {
+        $penghargaan = Penghargaan::find($id);
+        return view('customer.penghargaan.detail_penghargaan', compact('penghargaan'));
+    }
+
+    public function so_index()
+    {
+        $so = SO::all();
+        return view('customer.so.so', compact('so'));
+    }
+
+    public function jp_index()
+    {
+        $jp = JP::all();
+        return view('customer.jp.jp', compact('jp'));
+    }
+
+    public function jpegawai_index()
+    {
+        $jpegawai = JPegawai::all();
+        return view('customer.jpegawai.jpegawai', compact('jpegawai'));
     }
 }
 

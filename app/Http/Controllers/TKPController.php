@@ -29,7 +29,7 @@ class TKPController extends Controller
         $gambar = $request->file('gambar');
         $gambarPath = $gambar->store('slider_foto', 'public');
 
-        tkp::create([
+        TKP::create([
             'gambar' => $gambarPath,
         ]);
 

@@ -248,3 +248,19 @@ Route::get('/customer/ipam', [CustomerController::class, 'ipam_index'])->name('c
 
 //Galeri IPA
 Route::get('/customer/gi', [CustomerController::class, 'gi_index'])->name('customer.gi.gi.index');
+
+//Tabel Klasisfikasi Pelanggan
+Route::get('/customer/tkp', [CustomerController::class, 'tkp_index'])->name('customer.tkp.tkp.index');
+
+//kegiatan 
+Route::get('/customer/penghargaan', [CustomerController::class, 'penghargaan_index'])->name('customer.penghargaan.penghargaan.index');
+Route::get('/customer/penghargaan/{id}', [CustomerController::class, 'penghargaan_show'])->name('customer.penghargaan.penghargaan.show');
+
+//Struktur Organisasi
+Route::get('/customer/so', [CustomerController::class, 'so_index'])->name('customer.so.so.index');
+
+//Jumlah Pelanggan 
+Route::get('/customer/jp', [CustomerController::class, 'jp_index'])->name('customer.jp.jp.index');
+
+//Jumlah Pegawai
+Route::get('/customer/jpegawai', [CustomerController::class, 'jpegawai_index'])->name('customer.jpegawai.jpegawai.index');

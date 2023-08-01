@@ -23,7 +23,7 @@ class JPegawaiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'gambar' => 'nullable|image|max:2048',
+            'gambar' => 'required|image',
         ]);
 
         $gambar = $request->file('gambar');
@@ -33,7 +33,7 @@ class JPegawaiController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('jpegawai.index')->with('success', 'Slider foto berhasil ditambahkan.');
+        return redirect()->route('jpegawai.index')->with('success', 'Struktur Organsisasi ditambahkan.');
     }
 
     public function edit($id)
@@ -46,21 +46,21 @@ class JPegawaiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'gambar' => 'nullable|image|max:2048',
+            'gambar' => 'nullable|image',
         ]);
 
         $jpegawai = JPegawai::findOrFail($id);
 
         if ($request->hasFile('gambar')) {
             $gambar = $request->file('gambar');
-            $gambarPath = $gambar->store('slider_foto', 'public');
+            $gambarPath = $gambar->store('jpegawai', 'public');
             Storage::disk('public')->delete($jpegawai->gambar);
             $jpegawai->gambar = $gambarPath;
         }
 
         $jpegawai->save();
 
-        return redirect()->route('jpegawai.index')->with('success', 'Jumlah pegawai berhasil diperbarui.');
+        return redirect()->route('jpegawai.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class JPegawaiController extends Controller
         Storage::disk('public')->delete($jpegawai->gambar);
         $jpegawai->delete();
 
-        return redirect()->route('jpegawai.index')->with('success', 'Jumlah Pegawai berhasil dihapus.');
+        return redirect()->route('jpegawai.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
     }
 }
