@@ -241,4 +241,4 @@ Route::get('/customer/kegiatan', [CustomerController::class, 'kegiatan_index'])-
 Route::get('/customer/kegiatan/{id}', [CustomerController::class, 'kegiatan_show'])->name('customer.kegiatan.kegiatan.show');
 
 //SAB
-Route::get('/customer/sab', [CustomerController::class, 'sab_index'])->name('customer.sab.sab');
+Route::get('/customer/sab', [CustomerController::class, 'sab_index'])->name('customer.sab.sab.index');

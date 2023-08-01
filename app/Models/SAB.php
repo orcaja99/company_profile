@@ -7,9 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class SAB extends Model
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'gambar',
-    ];
+    protected $fillable = ['gambar'];
 }

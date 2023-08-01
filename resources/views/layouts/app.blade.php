@@ -53,6 +53,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('customer.kegiatan.kegiatan.index') }}"> Kegiatan </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('customer.sab.sab.index') }}"> SAB </a>
+                </li>
             </ul>
         </div>
     </div>
