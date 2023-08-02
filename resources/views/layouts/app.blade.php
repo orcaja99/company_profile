@@ -1,5 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +26,20 @@
 
         .content {
             padding: 20px;
+        }
+
+        /* Styles for the slider */
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-item {
+            display: none;
+        }
+
+        .slider-item.active {
+            display: block;
         }
     </style>
 </head>
@@ -71,5 +83,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+@yield('scripts') <!-- This will include the JavaScript code from home.blade.php -->
 </body>
 </html>

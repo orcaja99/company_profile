@@ -14,6 +14,8 @@ use App\Models\Penghargaan;
 use App\Models\SO;
 use App\Models\JP;
 use App\Models\JPegawai;
+use App\Models\SliderFoto;
+use App\Models\Pengumumen;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -121,6 +123,17 @@ class CustomerController extends Controller
         $jpegawai = JPegawai::all();
         return view('customer.jpegawai.jpegawai', compact('jpegawai'));
     }
+
+    public function home_index()
+    {
+        $sliderfoto = SliderFoto::all();
+        $pengumumen = Pengumumen::all();
+        $berita = Berita::all();
+        $beritap = Beritap::all();
+        return view('customer.home.home', compact('sliderfoto', 'pengumumen', 'berita', 'beritap'));
+    }
+
+   
 }
 
 

@@ -264,3 +264,7 @@ Route::get('/customer/jp', [CustomerController::class, 'jp_index'])->name('custo
 
 //Jumlah Pegawai
 Route::get('/customer/jpegawai', [CustomerController::class, 'jpegawai_index'])->name('customer.jpegawai.jpegawai.index');
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//halaman home -->
+Route::get('/customer/home', [CustomerController::class, 'home_index'])->name('customer.home.home.index');
