@@ -11,7 +11,7 @@
                 <img src="{{ asset('storage/images/' . $kegiatan->gambar) }}" alt="">
                 <p>Keterangan: {{ $kegiatan->keterangan }}</p>
                 <p>Sumber: {{ $kegiatan->sumber }}</p>
-                    <a href="{{ route('customer.kegiatan.kegiatan.show', ['id' => $kegiatan->id]) }}">Lihat Detail</a>
+                    <a href="{{ route('customer.kegiatan.detail_kegiatan.show', ['id' => $kegiatan->id]) }}">Lihat Detail</a>
                 </li>
             @endforeach
         </ul>

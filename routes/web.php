@@ -238,7 +238,7 @@ Route::get('/customer/dsb/{id}', [CustomerController::class, 'dsb_show'])->name(
 
 //kegiatan 
 Route::get('/customer/kegiatan', [CustomerController::class, 'kegiatan_index'])->name('customer.kegiatan.kegiatan.index');
-Route::get('/customer/kegiatan/{id}', [CustomerController::class, 'kegiatan_show'])->name('customer.kegiatan.kegiatan.show');
+Route::get('/customer/kegiatan/{id}', [CustomerController::class, 'kegiatan_show'])->name('customer.kegiatan.detail_kegiatan.show');
 
 //SAB
 Route::get('/customer/sab', [CustomerController::class, 'sab_index'])->name('customer.sab.sab.index');
@@ -268,3 +268,8 @@ Route::get('/customer/jpegawai', [CustomerController::class, 'jpegawai_index'])-
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //halaman home -->
 Route::get('/customer/home', [CustomerController::class, 'home_index'])->name('customer.home.home.index');
+
+//detail berita artikel
+Route::get('/customer/home/berita/{id}', [CustomerController::class, 'home_detail_berita'])->name('customer.home.berita.show');
+Route::get('/customer/home/beritap/{id}', [CustomerController::class, 'home_detail_beritap'])->name('customer.home.beritap.show');
+

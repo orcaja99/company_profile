@@ -55,7 +55,7 @@
                         <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar berita">
                         <p>{{ $item->tanggal }}</p>
                         <p>{{ $item->keterangan }}</p>
-                        <a href="{{ route('customer.berita.berita.show', ['id' => $item->id]) }}">Lihat Detail</a>
+                        <a href="{{ route('customer.home.berita.show', ['id' => $item->id]) }}">Lihat Detail</a>
                     </li>
                 @endif
             @endforeach
@@ -76,7 +76,7 @@
                         <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar beritap">
                         <p>{{ $item->tanggal }}</p>
                         <p>{{ $item->keterangan }}</p>
-                        <a href="{{ route('customer.beritap.beritap.show', ['id' => $item->id]) }}">Lihat Detail</a>
+                        <a href="{{ route('customer.home.beritap.show', ['id' => $item->id]) }}">Lihat Detail</a>
                     </li>
                 @endif
             @endforeach

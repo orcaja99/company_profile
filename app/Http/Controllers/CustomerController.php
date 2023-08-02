@@ -132,7 +132,17 @@ class CustomerController extends Controller
         $beritap = Beritap::all();
         return view('customer.home.home', compact('sliderfoto', 'pengumumen', 'berita', 'beritap'));
     }
+    public function home_detail_berita($id)
+    {
+        $berita = Berita::find($id);
+        return view('customer.home.berita', compact('berita', 'berita'));
+    }
 
+    public function home_detail_beritap($id)
+    {
+        $beritap = Beritap::find($id);
+        return view('customer.home.beritap', compact('beritap'));
+    }
    
 }
 
