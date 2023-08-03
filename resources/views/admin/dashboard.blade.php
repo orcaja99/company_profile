@@ -23,7 +23,7 @@
             <a class="nav-link {{ request()->is('admin.sejarah*') ? 'active' : '' }}" href="{{ route('admin.sejarah.index') }}" >Sejarah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('vms*') ? 'active' : '' }}" href="{{ route('vms.index') }}">Visi Misi dan Sejarah</a>
+            <a class="nav-link {{ request()->is('admin.vms*') ? 'active' : '' }}" href="{{ route('admin.vms.index') }}">Visi Misi dan Sejarah</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ request()->is('admin.berita*') ? 'active' : '' }}" href="{{ route('admin.berita.index') }}">artikel</a>
@@ -44,28 +44,28 @@
             <a class="nav-link{{ request()->is('admin.jpegawai*') ? 'active' : '' }}" href="{{ route('admin.jpegawai.index') }}">Jumalah Pegawain</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : '' }}" href="{{ route('kegiatan.index') }}">kegiatan</a>
+            <a class="nav-link {{ request()->is('admin.kegiatan*') ? 'active' : '' }}" href="{{ route('admin.kegiatan.index') }}">kegiatan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link{{ request()->is('admin.penghargaan*') ? 'active' : '' }}" href="{{ route('admin.penghargaan.index') }}">Penghargaan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link{{ request()->is('pengumumen*') ? 'active' : '' }}" href="{{ route('pengumumen.index') }}">Pengumuman</a>
+            <a class="nav-link{{ request()->is('admin.pengumumen*') ? 'active' : '' }}" href="{{ route('admin.pengumumen.index') }}">Pengumuman</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link{{ request()->is('sab*') ? 'active' : '' }}" href="{{ route('sab.index') }}">Sumber Air Baku</a>
+            <a class="nav-link{{ request()->is('admin.sab*') ? 'active' : '' }}" href="{{ route('admin.sab.index') }}">Sumber Air Baku</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link{{ request()->is('smt*') ? 'active' : '' }}" href="{{ route('smt.index') }}">Struktur Manajemen Mutu</a>
+            <a class="nav-link{{ request()->is('admin.smt*') ? 'active' : '' }}" href="{{ route('admin.smt.index') }}">Struktur Manajemen Mutu</a>
           </li>
           <li class="nav-item">
             <a class="nav-link{{ request()->is('admin.gi*') ? 'active' : '' }}" href="{{ route('admin.gi.index') }}">Galeri IPA</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ request()->is('so*') ? 'active' : '' }}" href="{{ route('so.index') }}">Struktur Organisasi</a>
+            <a class="nav-link {{ request()->is('admin.so*') ? 'active' : '' }}" href="{{ route('admin.so.index') }}">Struktur Organisasi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link{{ request()->is('tkp*') ? 'active' : '' }}" href="{{ route('tkp.index') }}">Table Klasifikasi Pelanggan</a>
+            <a class="nav-link{{ request()->is('admin.tkp*') ? 'active' : '' }}" href="{{ route('admin.tkp.index') }}">Table Klasifikasi Pelanggan</a>
           </li>
           <li class="nav-item">
             <li class="logout">

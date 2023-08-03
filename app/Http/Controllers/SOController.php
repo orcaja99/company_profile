@@ -12,12 +12,12 @@ class SOController extends Controller
     {
     $so = SO::all();
 
-    return view('so.index', compact('so'));
+    return view('admin.so.index', compact('so'));
 }
 
     public function create()
     {
-        return view('so.create');
+        return view('admin.so.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class SOController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('so.index')->with('success', 'Struktur Organsisasi ditambahkan.');
+        return redirect()->route('admin.so.index')->with('success', 'Struktur Organsisasi ditambahkan.');
     }
 
     public function edit($id)
     {
         $so = so::findOrFail($id);
 
-        return view('so.edit', compact('so'));
+        return view('admin.so.edit', compact('so'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class SOController extends Controller
 
         $so->save();
 
-        return redirect()->route('so.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
+        return redirect()->route('admin.so.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class SOController extends Controller
         Storage::disk('public')->delete($so->gambar);
         $so->delete();
 
-        return redirect()->route('so.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
+        return redirect()->route('admin.so.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
     }
 }

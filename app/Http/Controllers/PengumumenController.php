@@ -11,12 +11,12 @@ class PengumumenController extends Controller
     public function index()
     {
         $pengumumens = Pengumumen::all();
-        return view('pengumumen.index', compact('pengumumens'));
+        return view('admin.pengumumen.index', compact('pengumumens'));
     }
 
     public function create()
     {
-        return view('pengumumen.create');
+        return view('admin.pengumumen.create');
     }
 
     public function store(Request $request)
@@ -34,19 +34,19 @@ class PengumumenController extends Controller
         $pengumumen->keterangan = $validatedData['keterangan'];
         $pengumumen->save();
 
-        return redirect()->route('pengumumen.index')->with('success', 'pengumumen berhasil ditambahkan.');
+        return redirect()->route('admin.pengumumen.index')->with('success', 'pengumumen berhasil ditambahkan.');
     }
 
     public function show($id)
     {
         $pengumumen = Pengumumen::find($id);
-        return view('pengumumen.show', compact('pengumumen'));
+        return view('admin.pengumumen.show', compact('pengumumen'));
     }
 
     public function edit($id)
     {
         $pengumumen = Pengumumen::find($id);
-        return view('pengumumen.edit', compact('pengumumen'));
+        return view('admin.pengumumen.edit', compact('pengumumen'));
     }
 
     public function update(Request $request, $id)
@@ -63,7 +63,7 @@ class PengumumenController extends Controller
         $pengumumen->keterangan = $validatedData['keterangan'];
         $pengumumen->save();
 
-        return redirect()->route('pengumumen.index')->with('success', 'pengumumen berhasil diperbarui.');
+        return redirect()->route('admin.pengumumen.index')->with('success', 'pengumumen berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -71,6 +71,6 @@ class PengumumenController extends Controller
         $pengumumen = Pengumumen::find($id);
         $pengumumen->delete();
 
-        return redirect()->route('pengumumen.index')->with('success', 'pengumumen berhasil dihapus.');
+        return redirect()->route('admin.pengumumen.index')->with('success', 'pengumumen berhasil dihapus.');
     }
 }

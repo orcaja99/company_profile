@@ -12,12 +12,12 @@ class TKPController extends Controller
     {
     $tkp = TKP::all();
 
-    return view('tkp.index', compact('tkp'));
+    return view('admin.tkp.index', compact('tkp'));
 }
 
     public function create()
     {
-        return view('tkp.create');
+        return view('admin.tkp.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class TKPController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('tkp.index')->with('success', 'tabel klasifikasi pelanggan berhasil ditambahkan.');
+        return redirect()->route('admin.tkp.index')->with('success', 'tabel klasifikasi pelanggan berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
         $tkp = TKP::findOrFail($id);
 
-        return view('tkp.edit', compact('tkp'));
+        return view('admin.tkp.edit', compact('tkp'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class TKPController extends Controller
 
         $tkp->save();
 
-        return redirect()->route('tkp.index')->with('success', 'tabel klasifikasi pelanggan berhasil diperbarui.');
+        return redirect()->route('admin.tkp.index')->with('success', 'tabel klasifikasi pelanggan berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class TKPController extends Controller
         Storage::disk('public')->delete($tkp->gambar);
         $tkp->delete();
 
-        return redirect()->route('tkp.index')->with('success', 'tabel klasifikasi pelanggan dihapus.');
+        return redirect()->route('admin.tkp.index')->with('success', 'tabel klasifikasi pelanggan dihapus.');
     }
 }

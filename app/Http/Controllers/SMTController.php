@@ -10,12 +10,12 @@ class SMTController extends Controller
     public function index()
     {
         $smt = SMT::all();
-        return view('smt.index', compact('smt'));
+        return view('admin.smt.index', compact('smt'));
     }
 
     public function create()
     {
-        return view('smt.create');
+        return view('admin.smt.create');
     }
 
     public function store(Request $request)
@@ -28,19 +28,19 @@ class SMTController extends Controller
 
         SMT::create($validatedData);
 
-        return redirect('/smt')->with('success', 'Data berhasil disimpan.');
+        return redirect()->route('admin.smt.index')->with('success', 'Data berhasil disimpan.');
     }
 
     public function show($id)
     {
         $smt = SMT::findOrFail($id);
-        return view('smt.show', compact('smt'));
+        return view('admin.smt.show', compact('smt'));
     }
 
     public function edit($id)
     {
         $smt = SMT::findOrFail($id);
-        return view('smt.edit', compact('smt'));
+        return view('admin.smt.edit', compact('smt'));
     }
 
     public function update(Request $request, $id)
@@ -53,7 +53,7 @@ class SMTController extends Controller
 
         SMT::whereId($id)->update($validatedData);
 
-        return redirect('/smt')->with('success', 'Data berhasil diperbarui.');
+        return redirect()->route('admin.smt.index')->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -61,6 +61,6 @@ class SMTController extends Controller
         $smt = SMT::findOrFail($id);
         $smt->delete();
 
-        return redirect('/smt')->with('success', 'Data berhasil dihapus.');
+        return redirect()->route('admin.smt.index')->with('success', 'Data berhasil dihapus.');
     }
 }

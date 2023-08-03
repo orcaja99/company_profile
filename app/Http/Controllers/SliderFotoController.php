@@ -33,7 +33,7 @@ class SliderFotoController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('admin/sliderfoto.index')->with('success', 'Slider foto berhasil ditambahkan.');
+        return redirect()->route('admin.sliderfoto.index')->with('success', 'Slider foto berhasil ditambahkan.');
     }
 
     public function edit($id)
@@ -60,7 +60,7 @@ class SliderFotoController extends Controller
 
         $sliderFoto->save();
 
-        return redirect()->route('admin/sliderfoto.index')->with('success', 'Slider foto berhasil diperbarui.');
+        return redirect()->route('admin.sliderfoto.index')->with('success', 'Slider foto berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class SliderFotoController extends Controller
         Storage::disk('public')->delete($sliderFoto->gambar);
         $sliderFoto->delete();
 
-        return redirect()->route('admin/sliderfoto.index')->with('success', 'Slider foto berhasil dihapus.');
+        return redirect()->route('admin.sliderfoto.index')->with('success', 'Slider foto berhasil dihapus.');
     }
 }

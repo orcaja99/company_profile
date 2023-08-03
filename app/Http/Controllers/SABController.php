@@ -11,12 +11,12 @@ class SABController extends Controller
     {
     $sab = SAB::all();
 
-    return view('sab.index', compact('sab'));
+    return view('admin.sab.index', compact('sab'));
 }
 
     public function create()
     {
-        return view('sab.create');
+        return view('admin.sab.create');
     }
 
     public function store(Request $request)
@@ -32,14 +32,14 @@ class SABController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('sab.index')->with('success', 'sumber air baku berhasil ditambahkan.');
+        return redirect()->route('admin.sab.index')->with('success', 'sumber air baku berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
         $sab = SAB::findOrFail($id);
 
-        return view('sab.edit', compact('sab'));
+        return view('admin.sab.edit', compact('sab'));
     }
 
     public function update(Request $request, $id)
@@ -59,7 +59,7 @@ class SABController extends Controller
 
         $sab->save();
 
-        return redirect()->route('sab.index')->with('success', 'sumber air baku berhasil diperbarui.');
+        return redirect()->route('admin.sab.index')->with('success', 'sumber air baku berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -68,6 +68,6 @@ class SABController extends Controller
         Storage::disk('public')->delete($sab->gambar);
         $sab->delete();
 
-        return redirect()->route('sab.index')->with('success', 'sumber air baku berhasil dihapus.');
+        return redirect()->route('admin.sab.index')->with('success', 'sumber air baku berhasil dihapus.');
     }
 }

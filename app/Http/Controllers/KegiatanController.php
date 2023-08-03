@@ -17,12 +17,12 @@ class KegiatanController extends Controller
     public function index()
     {
         $kegiatans = Kegiatan::all();
-        return view('kegiatan.index', compact('kegiatans'));
+        return view('admin.kegiatan.index', compact('kegiatans'));
     }
 
     public function create()
     {
-        return view('kegiatan.create');
+        return view('admin.kegiatan.create');
     }
 
     public function store(Request $request)
@@ -55,19 +55,19 @@ class KegiatanController extends Controller
         $kegiatan->sumber = $validatedData['sumber'];
         $kegiatan->save();
 
-        return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil ditambahkan.');
+        return redirect()->route('admin.kegiatan.index')->with('success', 'kegiatan berhasil ditambahkan.');
     }
 
     public function show($id)
     {
         $kegiatan = Kegiatan::find($id);
-        return view('kegiatan.show', compact('kegiatan'));
+        return view('admin.kegiatan.show', compact('kegiatan'));
     }
 
     public function edit($id)
     {
         $kegiatan = Kegiatan::find($id);
-        return view('kegiatan.edit', compact('kegiatan'));
+        return view('admin.kegiatan.edit', compact('kegiatan'));
     }
 
     public function update(Request $request, $id)
@@ -96,7 +96,7 @@ class KegiatanController extends Controller
         $kegiatan->sumber = $validatedData['sumber'];
         $kegiatan->save();
 
-        return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil diperbarui.');
+        return redirect()->route('admin.kegiatan.index')->with('success', 'kegiatan berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -105,6 +105,6 @@ class KegiatanController extends Controller
         Storage::delete('public/images/' . $kegiatan->gambar); 
         $kegiatan->delete();
 
-        return redirect()->route('kegiatan.index')->with('success', 'kegiatan berhasil dihapus.');
+        return redirect()->route('admin.kegiatan.index')->with('success', 'kegiatan berhasil dihapus.');
     }
 }

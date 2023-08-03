@@ -54,13 +54,13 @@ Route::delete('/admin/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'd
 
 //home
 //pengumuman
-Route::get('/pengumuman', [PengumumenController::class, 'index'])->name('pengumumen.index');
-Route::get('/pengumuman/create', [PengumumenController::class, 'create'])->name('pengumumen.create');
-Route::post('/pengumuman', [PengumumenController::class, 'store'])->name('pengumumen.store');
-Route::get('/pengumuman/{id}', [PengumumenController::class, 'show'])->name('pengumumen.show');
-Route::get('/pengumuman/{id}/edit', [PengumumenController::class, 'edit'])->name('pengumumen.edit');
-Route::put('/pengumuman/{id}', [PengumumenController::class, 'update'])->name('pengumumen.update');
-Route::delete('/pengumuman/{id}', [PengumumenController::class, 'destroy'])->name('pengumumen.destroy');
+Route::get('/admin/pengumuman', [PengumumenController::class, 'index'])->name('admin.pengumumen.index');
+Route::get('/admin/pengumuman/create', [PengumumenController::class, 'create'])->name('admin.pengumumen.create');
+Route::post('/admin/pengumuman', [PengumumenController::class, 'store'])->name('admin.pengumumen.store');
+Route::get('/admin/pengumuman/{id}', [PengumumenController::class, 'show'])->name('admin.pengumumen.show');
+Route::get('/admin/pengumuman/{id}/edit', [PengumumenController::class, 'edit'])->name('admin.pengumumen.edit');
+Route::put('/admin/pengumuman/{id}', [PengumumenController::class, 'update'])->name('admin.pengumumen.update');
+Route::delete('/admin/pengumuman/{id}', [PengumumenController::class, 'destroy'])->name('admin.pengumumen.destroy');
 
 //halaman home
 //berita
@@ -74,13 +74,13 @@ Route::delete('/admin/berita/{id}', [BeritaController::class, 'destroy'])->name(
 
 //profle
 //smt
-Route::get('/smt', [SMTController::class, 'index'])->name('smt.index');
-Route::get('/smt/create', [SMTController::class, 'create'])->name('smt.create');
-Route::post('/smt', [SMTController::class, 'store'])->name('smt.store');
-Route::get('/smt/{id}', [SMTController::class, 'show'])->name('smt.show');
-Route::get('/smt/{id}/edit', [SMTController::class, 'edit'])->name('smt.edit');
-Route::put('/smt/{id}', [SMTController::class, 'update'])->name('smt.update');
-Route::delete('/smt/{id}', [SMTController::class, 'destroy'])->name('smt.destroy');
+Route::get('/admin/smt', [SMTController::class, 'index'])->name('admin.smt.index');
+Route::get('/admin/smt/create', [SMTController::class, 'create'])->name('admin.smt.create');
+Route::post('/admin/smt', [SMTController::class, 'store'])->name('admin.smt.store');
+Route::get('/admin/smt/{id}', [SMTController::class, 'show'])->name('admin.smt.show');
+Route::get('/admin/smt/{id}/edit', [SMTController::class, 'edit'])->name('admin.smt.edit');
+Route::put('/admin/smt/{id}', [SMTController::class, 'update'])->name('admin.smt.update');
+Route::delete('/admin/smt/{id}', [SMTController::class, 'destroy'])->name('admin.smt.destroy');
 
 //prolie
 //sejarah singkat
@@ -95,13 +95,13 @@ Route::delete('/admin/sejarah/{id}', [SejarahController::class, 'destroy'])->nam
 
 //halaman home
 //slider foto
-Route::get('/so', [SOController::class, 'index'])->name('so.index');
-Route::get('/so/create', [SOController::class, 'create'])->name('so.create');
-Route::post('/so', [SOController::class, 'store'])->name('so.store');
-Route::get('/so/{id}', [SOController::class, 'show'])->name('so.show');
-Route::get('/so/{id}/edit', [SOController::class, 'edit'])->name('so.edit');
-Route::put('/so/{id}', [SOController::class, 'update'])->name('so.update');
-Route::delete('/so/{id}', [SOController::class, 'destroy'])->name('so.destroy');
+Route::get('/admin/so', [SOController::class, 'index'])->name('admin.so.index');
+Route::get('/admin/so/create', [SOController::class, 'create'])->name('admin.so.create');
+Route::post('/admin/so', [SOController::class, 'store'])->name('admin.so.store');
+Route::get('/admin/so/{id}', [SOController::class, 'show'])->name('admin.so.show');
+Route::get('/admin/so/{id}/edit', [SOController::class, 'edit'])->name('admin.so.edit');
+Route::put('/admin/so/{id}', [SOController::class, 'update'])->name('admin.so.update');
+Route::delete('/admin/so/{id}', [SOController::class, 'destroy'])->name('admin.so.destroy');
 
 //profile
 //jumlah pelanggan
@@ -115,13 +115,13 @@ Route::delete('/admin/jp/{id}', [JPController::class, 'destroy'])->name('admin.j
 
 //profile
 //visi misi dan startegi
-Route::get('/vms', [VmsController::class, 'index'])->name('vms.index');
-Route::get('/vms/create', [VmsController::class, 'create'])->name('vms.create');
-Route::post('/vms', [VmsController::class, 'store'])->name('vms.store');
-Route::get('/vms/{id}/edit', [VmsController::class, 'edit'])->name('vms.edit');
-Route::get('/vms/{id}', [VmsController::class, 'show'])->name('vms.show');
-Route::put('/vms/{id}', [VmsController::class, 'update'])->name('vms.update');
-Route::delete('/vms/{id}', [VmsController::class, 'destroy'])->name('vms.destroy');
+Route::get('/admin/vms', [VmsController::class, 'index'])->name('admin.vms.index');
+Route::get('/admin/vms/create', [VmsController::class, 'create'])->name('admin.vms.create');
+Route::post('/admin/vms', [VmsController::class, 'store'])->name('admin.vms.store');
+Route::get('/admin/vms/{id}/edit', [VmsController::class, 'edit'])->name('admin.vms.edit');
+Route::get('/admin/vms/{id}', [VmsController::class, 'show'])->name('admin.vms.show');
+Route::put('/admin/vms/{id}', [VmsController::class, 'update'])->name('admin.vms.update');
+Route::delete('/admin/vms/{id}', [VmsController::class, 'destroy'])->name('admin.vms.destroy');
 
 //profile
 //jumlah pelanggan
@@ -154,23 +154,23 @@ Route::delete('/admin/dsb/{id}', [DSBController::class, 'destroy'])->name('admin
 
 //halaman info pelanggan
 //tabel klasifikasi pelanggan
-Route::get('/tkp', [TKPController::class, 'index'])->name('tkp.index');
-Route::get('/tkp/create', [TKPController::class, 'create'])->name('tkp.create');
-Route::post('/tkp', [TKPController::class, 'store'])->name('tkp.store');
-Route::get('/tkp/{id}', [TKPController::class, 'show'])->name('tkp.show');
-Route::get('/tkp/{id}/edit', [TKPController::class, 'edit'])->name('tkp.edit');
-Route::put('/tkp/{id}', [TKPController::class, 'update'])->name('tkp.update');
-Route::delete('/tkp/{id}', [TKPController::class, 'destroy'])->name('tkp.destroy');
+Route::get('/admin/tkp', [TKPController::class, 'index'])->name('admin.tkp.index');
+Route::get('/admin/tkp/create', [TKPController::class, 'create'])->name('admin.tkp.create');
+Route::post('/admin/tkp', [TKPController::class, 'store'])->name('admin.tkp.store');
+Route::get('/admin/tkp/{id}', [TKPController::class, 'show'])->name('admin.tkp.show');
+Route::get('/admin/tkp/{id}/edit', [TKPController::class, 'edit'])->name('admin.tkp.edit');
+Route::put('/admin/tkp/{id}', [TKPController::class, 'update'])->name('admin.tkp.update');
+Route::delete('/admin/tkp/{id}', [TKPController::class, 'destroy'])->name('admin.tkp.destroy');
 
 //halaman info pelanggan
 //tabel klasifikasi pelanggan
-Route::get('/sab', [SABController::class, 'index'])->name('sab.index');
-Route::get('/sab/create', [SABController::class, 'create'])->name('sab.create');
-Route::post('/sab', [SABController::class, 'store'])->name('sab.store');
-Route::get('/sab/{id}', [SABController::class, 'show'])->name('sab.show');
-Route::get('/sab/{id}/edit', [SABController::class, 'edit'])->name('sab.edit');
-Route::put('/sab/{id}', [SABController::class, 'update'])->name('sab.update');
-Route::delete('/sab/{id}', [SABController::class, 'destroy'])->name('sab.destroy');
+Route::get('/admin/sab', [SABController::class, 'index'])->name('admin.sab.index');
+Route::get('/admin/sab/create', [SABController::class, 'create'])->name('admin.sab.create');
+Route::post('/admin/sab', [SABController::class, 'store'])->name('admin.sab.store');
+Route::get('/admin/sab/{id}', [SABController::class, 'show'])->name('admin.sab.show');
+Route::get('/admin/sab/{id}/edit', [SABController::class, 'edit'])->name('admin.sab.edit');
+Route::put('/admin/sab/{id}', [SABController::class, 'update'])->name('admin.sab.update');
+Route::delete('/admin/sab/{id}', [SABController::class, 'destroy'])->name('admin.sab.destroy');
 
 //halaman Infrastuktur
 //sumber air baku
@@ -204,13 +204,13 @@ Route::delete('/sab/{id}', [SABController::class, 'destroy'])->name('sab.destroy
     Route::delete('/admin/beritap/{id}', [BeritapController::class, 'destroy'])->name('admin.beritap.destroy');
 
 
-    Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');
-    Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
-    Route::post('/kegiatan', [KegiatanController::class, 'store'])->name('kegiatan.store');
-    Route::get('/kegiatan/{id}', [KegiatanController::class, 'show'])->name('kegiatan.show');
-    Route::get('/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('kegiatan.edit');
-    Route::put('/kegiatan/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
-    Route::delete('/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('kegiatan.destroy');
+    Route::get('/admin/kegiatan', [KegiatanController::class, 'index'])->name('admin.kegiatan.index');
+    Route::get('/admin/kegiatan/create', [KegiatanController::class, 'create'])->name('admin.kegiatan.create');
+    Route::post('/admin/kegiatan', [KegiatanController::class, 'store'])->name('admin.kegiatan.store');
+    Route::get('/admin/kegiatan/{id}', [KegiatanController::class, 'show'])->name('admin.kegiatan.show');
+    Route::get('/admin/kegiatan/{id}/edit', [KegiatanController::class, 'edit'])->name('admin.kegiatan.edit');
+    Route::put('/admin/kegiatan/{id}', [KegiatanController::class, 'update'])->name('admin.kegiatan.update');
+    Route::delete('/admin/kegiatan/{id}', [KegiatanController::class, 'destroy'])->name('admin.kegiatan.destroy');
 });
 
 //halaman login
