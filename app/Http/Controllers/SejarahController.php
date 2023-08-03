@@ -10,12 +10,12 @@ class SejarahController extends Controller
     public function index()
     {
         $sejarah = Sejarah::all();
-        return view('sejarah.index', compact('sejarah'));
+        return view('admin.sejarah.index', compact('sejarah'));
     }
 
     public function create()
     {
-        return view('sejarah.create');
+        return view('admin.sejarah.create');
     }
 
     public function store(Request $request)
@@ -27,19 +27,19 @@ class SejarahController extends Controller
         $sejarah->keterangan = $request->input('keterangan');
         $sejarah->save();
 
-        return redirect()->route('sejarah.index')->with('success', 'Sejarah berhasil ditambahkan.');
+        return redirect()->route('admin/sejarah.index')->with('success', 'Sejarah berhasil ditambahkan.');
     }
 
     public function show($id)
     {
         $sejarah = Sejarah::find($id);
-        return view('sejarah.show', compact('sejarah'));
+        return view('admin.sejarah.show', compact('sejarah'));
     }
 
     public function edit($id)
     {
         $sejarah = Sejarah::find($id);
-        return view('sejarah.edit', compact('sejarah'));
+        return view('admin.sejarah.edit', compact('sejarah'));
     }
 
     public function update(Request $request, $id)
@@ -51,7 +51,7 @@ class SejarahController extends Controller
         $sejarah->keterangan = $request->input('keterangan');
         $sejarah->save();
 
-        return redirect()->route('sejarah.index')->with('success', 'Sejarah berhasil diperbarui.');
+        return redirect()->route('admin/sejarah.index')->with('success', 'Sejarah berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -59,6 +59,6 @@ class SejarahController extends Controller
         $sejarah = Sejarah::find($id);
         $sejarah->delete();
 
-        return redirect()->route('sejarah.index')->with('success', 'Sejarah berhasil dihapus.');
+        return redirect()->route('admin/sejarah.index')->with('success', 'Sejarah berhasil dihapus.');
     }
 }

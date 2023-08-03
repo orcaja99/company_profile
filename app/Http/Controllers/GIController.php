@@ -12,12 +12,12 @@ class GIController extends Controller
     {
     $gi = GI::all();
 
-    return view('gi.index', compact('gi'));
+    return view('admin.gi.index', compact('gi'));
 }
 
     public function create()
     {
-        return view('gi.create');
+        return view('admin.gi.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class GIController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('gi.index')->with('success', 'igaleri ipa ditambahkan.');
+        return redirect()->route('admin.gi.index')->with('success', 'igaleri ipa ditambahkan.');
     }
 
     public function edit($id)
     {
         $gi = GI::findOrFail($id);
 
-        return view('gi.edit', compact('gi'));
+        return view('admin.gi.edit', compact('gi'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class GIController extends Controller
 
         $gi->save();
 
-        return redirect()->route('gi.index')->with('success', 'galeri ipa berhasil diperbarui.');
+        return redirect()->route('admin.gi.index')->with('success', 'galeri ipa berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class GIController extends Controller
         Storage::disk('public')->delete($gi->gambar);
         $gi->delete();
 
-        return redirect()->route('gi.index')->with('success', 'galeri ipa berhasil dihapus.');
+        return redirect()->route('admin.gi.index')->with('success', 'galeri ipa berhasil dihapus.');
     }
 }

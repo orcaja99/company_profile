@@ -12,12 +12,12 @@ class IPAMController extends Controller
     {
     $ipam = IPAM::all();
 
-    return view('ipam.index', compact('ipam'));
+    return view('admin.ipam.index', compact('ipam'));
 }
 
     public function create()
     {
-        return view('ipam.create');
+        return view('admin.ipam.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class IPAMController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('ipam.index')->with('success', 'instalasi pengolahaan air minum ditambahkan.');
+        return redirect()->route('admin.ipam.index')->with('success', 'instalasi pengolahaan air minum ditambahkan.');
     }
 
     public function edit($id)
     {
         $ipam = IPAM::findOrFail($id);
 
-        return view('ipam.edit', compact('ipam'));
+        return view('admin.ipam.edit', compact('ipam'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class IPAMController extends Controller
 
         $ipam->save();
 
-        return redirect()->route('ipam.index')->with('success', 'instalasi pengolahaan air minum berhasil diperbarui.');
+        return redirect()->route('admin.ipam.index')->with('success', 'instalasi pengolahaan air minum berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class IPAMController extends Controller
         Storage::disk('public')->delete($ipam->gambar);
         $ipam->delete();
 
-        return redirect()->route('ipam.index')->with('success', 'instalasi pengolahaan air minum berhasil dihapus.');
+        return redirect()->route('admin.ipam.index')->with('success', 'instalasi pengolahaan air minum berhasil dihapus.');
     }
 }

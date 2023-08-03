@@ -11,7 +11,7 @@ class BeritapController extends Controller
     public function index()
     {
         $beritaps = beritap::all();
-        return view('beritap.index', compact('beritaps'));
+        return view('admin.beritap.index', compact('beritaps'));
     }
 
     public function create()
@@ -40,19 +40,19 @@ class BeritapController extends Controller
         $beritap->keterangan = $validatedData['keterangan'];
         $beritap->save();
 
-        return redirect()->route('beritap.index')->with('success', 'beritap berhasil ditambahkan.');
+        return redirect()->route('admin.beritap.index')->with('success', 'beritap berhasil ditambahkan.');
     }
 
     public function show($id)
     {
         $beritap = Beritap::find($id);
-        return view('beritap.show', compact('beritap'));
+        return view('admin.beritap.show', compact('beritap'));
     }
 
     public function edit($id)
     {
         $beritap = Beritap::find($id);
-        return view('beritap.edit', compact('beritap'));
+        return view('admin.beritap.edit', compact('beritap'));
     }
 
     public function update(Request $request, $id)
@@ -79,7 +79,7 @@ class BeritapController extends Controller
         $beritap->keterangan = $validatedData['keterangan'];
         $beritap->save();
 
-        return redirect()->route('beritap.index')->with('success', 'beritap berhasil diperbarui.');
+        return redirect()->route('admin.beritap.index')->with('success', 'beritap berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -88,6 +88,6 @@ class BeritapController extends Controller
         Storage::delete('public/images/' . $beritap->gambar); // Hapus gambar terkait beritap
         $beritap->delete();
 
-        return redirect()->route('beritap.index')->with('success', 'beritap berhasil dihapus.');
+        return redirect()->route('admin.beritap.index')->with('success', 'beritap berhasil dihapus.');
     }
 }

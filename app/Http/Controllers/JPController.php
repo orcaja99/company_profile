@@ -12,12 +12,12 @@ class JPController extends Controller
     {
     $jp = JP::all();
 
-    return view('jp.index', compact('jp'));
+    return view('admin.jp.index', compact('jp'));
 }
 
     public function create()
     {
-        return view('jp.create');
+        return view('admin.jp.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class JPController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('jp.index')->with('success', 'Struktur Organsisasi ditambahkan.');
+        return redirect()->route('admin.jp.index')->with('success', 'Struktur Organsisasi ditambahkan.');
     }
 
     public function edit($id)
     {
         $jp = jp::findOrFail($id);
 
-        return view('jp.edit', compact('jp'));
+        return view('admin.jp.edit', compact('jp'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class JPController extends Controller
 
         $jp->save();
 
-        return redirect()->route('jp.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
+        return redirect()->route('admin.jp.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class JPController extends Controller
         Storage::disk('public')->delete($jp->gambar);
         $jp->delete();
 
-        return redirect()->route('jp.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
+        return redirect()->route('admin.jp.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
     }
 }

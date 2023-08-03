@@ -11,12 +11,12 @@ class BeritaController extends Controller
     public function index()
     {
         $beritas = Berita::all();
-        return view('berita.index', compact('beritas'));
+        return view('admin.berita.index', compact('beritas'));
     }
 
     public function create()
     {
-        return view('berita.create');
+        return view('admin.berita.create');
     }
 
     public function store(Request $request)
@@ -40,19 +40,19 @@ class BeritaController extends Controller
         $berita->keterangan = $validatedData['keterangan'];
         $berita->save();
 
-        return redirect()->route('berita.index')->with('success', 'berita berhasil ditambahkan.');
+        return redirect()->route('admin.berita.index')->with('success', 'berita berhasil ditambahkan.');
     }
 
     public function show($id)
     {
         $berita = Berita::find($id);
-        return view('berita.show', compact('berita'));
+        return view('admin.berita.show', compact('berita'));
     }
 
     public function edit($id)
     {
         $berita = Berita::find($id);
-        return view('berita.edit', compact('berita'));
+        return view('admin.berita.edit', compact('berita'));
     }
 
     public function update(Request $request, $id)
@@ -79,7 +79,7 @@ class BeritaController extends Controller
         $berita->keterangan = $validatedData['keterangan'];
         $berita->save();
 
-        return redirect()->route('berita.index')->with('success', 'berita berhasil diperbarui.');
+        return redirect()->route('admin.berita.index')->with('success', 'berita berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -88,6 +88,6 @@ class BeritaController extends Controller
         Storage::delete('public/images/' . $berita->gambar); // Hapus gambar terkait berita
         $berita->delete();
 
-        return redirect()->route('berita.index')->with('success', 'berita berhasil dihapus.');
+        return redirect()->route('admin.berita.index')->with('success', 'berita berhasil dihapus.');
     }
 }

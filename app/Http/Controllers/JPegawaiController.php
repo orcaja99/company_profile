@@ -12,12 +12,12 @@ class JPegawaiController extends Controller
     {
     $jpegawai = JPegawai::all();
 
-    return view('jpegawai.index', compact('jpegawai'));
+    return view('admin.jpegawai.index', compact('jpegawai'));
 }
 
     public function create()
     {
-        return view('jpegawai.create');
+        return view('admin.jpegawai.create');
     }
 
     public function store(Request $request)
@@ -33,14 +33,14 @@ class JPegawaiController extends Controller
             'gambar' => $gambarPath,
         ]);
 
-        return redirect()->route('jpegawai.index')->with('success', 'Struktur Organsisasi ditambahkan.');
+        return redirect()->route('admin.jpegawai.index')->with('success', 'Struktur Organsisasi ditambahkan.');
     }
 
     public function edit($id)
     {
         $jpegawai = JPegawai::findOrFail($id);
 
-        return view('jpegawai.edit', compact('jpegawai'));
+        return view('admin.jpegawai.edit', compact('jpegawai'));
     }
 
     public function update(Request $request, $id)
@@ -60,7 +60,7 @@ class JPegawaiController extends Controller
 
         $jpegawai->save();
 
-        return redirect()->route('jpegawai.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
+        return redirect()->route('admin.jpegawai.index')->with('success', 'Struktur Organisasi berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -69,6 +69,6 @@ class JPegawaiController extends Controller
         Storage::disk('public')->delete($jpegawai->gambar);
         $jpegawai->delete();
 
-        return redirect()->route('jpegawai.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
+        return redirect()->route('admin.jpegawai.index')->with('success', 'Struktur Organisasi berhasil dihapus.');
     }
 }

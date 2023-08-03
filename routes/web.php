@@ -44,13 +44,13 @@ Route::get('/', function () {
 Route::group(['middleware' => 'admin.login'], function () {
 //halaman home
 //slider foto
-Route::get('/sliderfoto', [SliderFotoController::class, 'index'])->name('sliderfoto.index');
-Route::get('/sliderfoto/create', [SliderFotoController::class, 'create'])->name('sliderfoto.create');
-Route::post('/sliderfoto', [SliderFotoController::class, 'store'])->name('sliderfoto.store');
-Route::get('/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'show'])->name('sliderfoto.show');
-Route::get('/sliderfoto/{sliderfoto}/edit', [SliderFotoController::class, 'edit'])->name('sliderfoto.edit');
-Route::put('/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'update'])->name('sliderfoto.update');
-Route::delete('/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'destroy'])->name('sliderfoto.destroy');
+Route::get('/admin/sliderfoto', [SliderFotoController::class, 'index'])->name('admin.sliderfoto.index');
+Route::get('/admin/sliderfoto/create', [SliderFotoController::class, 'create'])->name('admin.sliderfoto.create');
+Route::post('/admin/sliderfoto', [SliderFotoController::class, 'store'])->name('admin.sliderfoto.store');
+Route::get('/admin/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'show'])->name('admin.sliderfoto.show');
+Route::get('/admin/sliderfoto/{sliderfoto}/edit', [SliderFotoController::class, 'edit'])->name('admin.sliderfoto.edit');
+Route::put('/admin/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'update'])->name('admin.sliderfoto.update');
+Route::delete('/admin/sliderfoto/{sliderfoto}', [SliderFotoController::class, 'destroy'])->name('admin.sliderfoto.destroy');
 
 //home
 //pengumuman
@@ -64,13 +64,13 @@ Route::delete('/pengumuman/{id}', [PengumumenController::class, 'destroy'])->nam
 
 //halaman home
 //berita
-Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
-Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
-Route::post('/berita', [BeritaController::class, 'store'])->name('berita.store');
-Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
-Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
-Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
-Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
+Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
+Route::get('/admin/berita/create', [BeritaController::class, 'create'])->name('admin.berita.create');
+Route::post('/admin/berita', [BeritaController::class, 'store'])->name('admin.berita.store');
+Route::get('/admin/berita/{id}', [BeritaController::class, 'show'])->name('admin.berita.show');
+Route::get('/admin/berita/{id}/edit', [BeritaController::class, 'edit'])->name('admin.berita.edit');
+Route::put('/admin/berita/{id}', [BeritaController::class, 'update'])->name('admin.berita.update');
+Route::delete('/admin/berita/{id}', [BeritaController::class, 'destroy'])->name('admin.berita.destroy');
 
 //profle
 //smt
@@ -85,13 +85,13 @@ Route::delete('/smt/{id}', [SMTController::class, 'destroy'])->name('smt.destroy
 //prolie
 //sejarah singkat
 
-Route::get('/sejarah', [SejarahController::class, 'index'])->name('sejarah.index');
-Route::get('/sejarah/create', [SejarahController::class, 'create'])->name('sejarah.create');
-Route::post('/sejarah', [SejarahController::class, 'store'])->name('sejarah.store');
-Route::get('/sejarah/{id}', [SejarahController::class, 'show'])->name('sejarah.show');
-Route::get('/sejarah/{id}/edit', [SejarahController::class, 'edit'])->name('sejarah.edit');
-Route::put('/sejarah/{id}', [SejarahController::class, 'update'])->name('sejarah.update');
-Route::delete('/sejarah/{id}', [SejarahController::class, 'destroy'])->name('sejarah.destroy');
+Route::get('/admin/sejarah', [SejarahController::class, 'index'])->name('admin.sejarah.index');
+Route::get('/admin/sejarah/create', [SejarahController::class, 'create'])->name('admin.sejarah.create');
+Route::post('/admin/sejarah', [SejarahController::class, 'store'])->name('admin.sejarah.store');
+Route::get('/admin/sejarah/{id}', [SejarahController::class, 'show'])->name('admin.sejarah.show');
+Route::get('//adminsejarah/{id}/edit', [SejarahController::class, 'edit'])->name('admin.sejarah.edit');
+Route::put('/admin/sejarah/{id}', [SejarahController::class, 'update'])->name('admin.sejarah.update');
+Route::delete('/admin/sejarah/{id}', [SejarahController::class, 'destroy'])->name('admin.sejarah.destroy');
 
 //halaman home
 //slider foto
@@ -105,13 +105,13 @@ Route::delete('/so/{id}', [SOController::class, 'destroy'])->name('so.destroy');
 
 //profile
 //jumlah pelanggan
-Route::get('/jp', [JPController::class, 'index'])->name('jp.index');
-Route::get('/jp/create', [JPController::class, 'create'])->name('jp.create');
-Route::post('/jp', [JPController::class, 'store'])->name('jp.store');
-Route::get('/jp/{id}', [JPController::class, 'show'])->name('jp.show');
-Route::get('/jp/{id}/edit', [JPController::class, 'edit'])->name('jp.edit');
-Route::put('/jp/{id}', [JPController::class, 'update'])->name('jp.update');
-Route::delete('/jp/{id}', [JPController::class, 'destroy'])->name('jp.destroy');
+Route::get('/admin/jp', [JPController::class, 'index'])->name('admin.jp.index');
+Route::get('/admin/jp/create', [JPController::class, 'create'])->name('admin.jp.create');
+Route::post('/admin/jp', [JPController::class, 'store'])->name('admin.jp.store');
+Route::get('/admin/jp/{id}', [JPController::class, 'show'])->name('admin.jp.show');
+Route::get('/admin/jp/{id}/edit', [JPController::class, 'edit'])->name('admin.jp.edit');
+Route::put('/admin/jp/{id}', [JPController::class, 'update'])->name('admin.jp.update');
+Route::delete('/admin/jp/{id}', [JPController::class, 'destroy'])->name('admin.jp.destroy');
 
 //profile
 //visi misi dan startegi
@@ -125,32 +125,32 @@ Route::delete('/vms/{id}', [VmsController::class, 'destroy'])->name('vms.destroy
 
 //profile
 //jumlah pelanggan
-Route::get('/jpegawai', [JPegawaiController::class, 'index'])->name('jpegawai.index');
-Route::get('/jpegawai/create', [JPegawaiController::class, 'create'])->name('jpegawai.create');
-Route::post('/jpegawai', [JPegawaiController::class, 'store'])->name('jpegawai.store');
-Route::get('/jpegawai/{id}', [JPegawaiController::class, 'show'])->name('jpegawai.show');
-Route::get('/jpegawai/{id}/edit', [JPegawaiController::class, 'edit'])->name('jpegawai.edit');
-Route::put('/jpegawai/{id}', [JPegawaiController::class, 'update'])->name('jpegawai.update');
-Route::delete('/jpegawai/{id}', [JPegawaiController::class, 'destroy'])->name('jpegawai.destroy');
+Route::get('/admin/jpegawai', [JPegawaiController::class, 'index'])->name('admin.jpegawai.index');
+Route::get('/admin/jpegawai/create', [JPegawaiController::class, 'create'])->name('admin.jpegawai.create');
+Route::post('/admin/jpegawai', [JPegawaiController::class, 'store'])->name('admin.jpegawai.store');
+Route::get('/admin/jpegawai/{id}', [JPegawaiController::class, 'show'])->name('admin.jpegawai.show');
+Route::get('/admin/jpegawai/{id}/edit', [JPegawaiController::class, 'edit'])->name('admin.jpegawai.edit');
+Route::put('/admin/jpegawai/{id}', [JPegawaiController::class, 'update'])->name('admin.jpegawai.update');
+Route::delete('/admin/jpegawai/{id}', [JPegawaiController::class, 'destroy'])->name('admin.jpegawai.destroy');
 
 //penghargaan
-Route::get('/penghargaan', [PenghargaanController::class, 'index'])->name('penghargaan.index');
-Route::get('/penghargaan/create', [PenghargaanController::class, 'create'])->name('penghargaan.create');
-Route::post('/penghargaan', [PenghargaanController::class, 'store'])->name('penghargaan.store');
-Route::get('/penghargaan/{id}', [PenghargaanController::class, 'show'])->name('penghargaan.show');
-Route::get('/penghargaans/{id}/edit', [PenghargaanController::class, 'edit'])->name('penghargaan.edit');
-Route::put('/penghargaans/{id}', [PenghargaanController::class, 'update'])->name('penghargaan.update');
-Route::delete('/penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('penghargaan.destroy');
+Route::get('/admin/penghargaan', [PenghargaanController::class, 'index'])->name('admin.penghargaan.index');
+Route::get('/admin/penghargaan/create', [PenghargaanController::class, 'create'])->name('admin.penghargaan.create');
+Route::post('/admin/penghargaan', [PenghargaanController::class, 'store'])->name('admin.penghargaan.store');
+Route::get('/admin/penghargaan/{id}', [PenghargaanController::class, 'show'])->name('admin.penghargaan.show');
+Route::get('/admin/penghargaans/{id}/edit', [PenghargaanController::class, 'edit'])->name('admin.penghargaan.edit');
+Route::put('/admin/penghargaans/{id}', [PenghargaanController::class, 'update'])->name('admin.penghargaan.update');
+Route::delete('/admin/penghargaan/{id}', [PenghargaanController::class, 'destroy'])->name('admin.penghargaan.destroy');
 
 //info pelanggan
 //dsb
-Route::get('/dsb', [DSBController::class, 'index'])->name('dsb.index');
-Route::get('/dsb/create', [DSBController::class, 'create'])->name('dsb.create');
-Route::post('/dsb', [DSBController::class, 'store'])->name('dsb.store');
-Route::get('/dsb/{id}', [DSBController::class, 'show'])->name('dsb.show');
-Route::get('/dsb/{id}/edit', [DSBController::class, 'edit'])->name('dsb.edit');
-Route::put('/dsb/{id}', [DSBController::class, 'update'])->name('dsb.update');
-Route::delete('/dsb/{id}', [DSBController::class, 'destroy'])->name('dsb.destroy');
+Route::get('/admin/dsb', [DSBController::class, 'index'])->name('admin.dsb.index');
+Route::get('/admin/dsb/create', [DSBController::class, 'create'])->name('admin.dsb.create');
+Route::post('/admin/dsb', [DSBController::class, 'store'])->name('admin.dsb.store');
+Route::get('/admin/dsb/{id}', [DSBController::class, 'show'])->name('admin.dsb.show');
+Route::get('/admin/dsb/{id}/edit', [DSBController::class, 'edit'])->name('admin.dsb.edit');
+Route::put('/admin/dsb/{id}', [DSBController::class, 'update'])->name('admin.dsb.update');
+Route::delete('/admin/dsb/{id}', [DSBController::class, 'destroy'])->name('admin.dsb.destroy');
 
 //halaman info pelanggan
 //tabel klasifikasi pelanggan
@@ -174,34 +174,34 @@ Route::delete('/sab/{id}', [SABController::class, 'destroy'])->name('sab.destroy
 
 //halaman Infrastuktur
 //sumber air baku
-Route::get('/ipam', [IPAMController::class, 'index'])->name('ipam.index');
-Route::get('/ipam/create', [IPAMController::class, 'create'])->name('ipam.create');
-Route::post('/ipam', [IPAMController::class, 'store'])->name('ipam.store');
-Route::get('/ipam/{id}', [IPAMController::class, 'show'])->name('ipam.show');
-Route::get('/ipam/{id}/edit', [IPAMController::class, 'edit'])->name('ipam.edit');
-Route::put('/ipam/{id}', [IPAMController::class, 'update'])->name('ipam.update');
-Route::delete('/ipam/{id}', [IPAMController::class, 'destroy'])->name('ipam.destroy');
+    Route::get('/admin/ipam', [IPAMController::class, 'index'])->name('admin.ipam.index');
+    Route::get('/admin/ipam/create', [IPAMController::class, 'create'])->name('admin.ipam.create');
+    Route::post('/admin/ipam', [IPAMController::class, 'store'])->name('admin.ipam.store');
+    Route::get('/admin/ipam/{id}', [IPAMController::class, 'show'])->name('admin.ipam.show');
+    Route::get('/admin/ipam/{id}/edit', [IPAMController::class, 'edit'])->name('admin.ipam.edit');
+    Route::put('/admin/ipam/{id}', [IPAMController::class, 'update'])->name('admin.ipam.update');
+    Route::delete('/admin/ipam/{id}', [IPAMController::class, 'destroy'])->name('admin.ipam.destroy');
 
 //halaman Infrastuktur
 //galeri ipa
-Route::get('/gi', [GIController::class, 'index'])->name('gi.index');
-Route::get('/gi/create', [GIController::class, 'create'])->name('gi.create');
-Route::post('/gi', [GIController::class, 'store'])->name('gi.store');
-Route::get('/gi/{id}', [GIController::class, 'show'])->name('gi.show');
-Route::get('/gi/{id}/edit', [GIController::class, 'edit'])->name('gi.edit');
-Route::put('/gi/{id}', [GIController::class, 'update'])->name('gi.update');
-Route::delete('/gi/{id}', [GIController::class, 'destroy'])->name('gi.destroy');
+    Route::get('/admin/gi', [GIController::class, 'index'])->name('admin.gi.index');
+    Route::get('/admin/gi/create', [GIController::class, 'create'])->name('admin.gi.create');
+    Route::post('/admin/gi', [GIController::class, 'store'])->name('admin.gi.store');
+    Route::get('/admin/gi/{id}', [GIController::class, 'show'])->name('admin.gi.show');
+    Route::get('/admin/gi/{id}/edit', [GIController::class, 'edit'])->name('admin.gi.edit');
+    Route::put('/admin/gi/{id}', [GIController::class, 'update'])->name('admin.gi.update');
+    Route::delete('/admin/gi/{id}', [GIController::class, 'destroy'])->name('admin.gi.destroy');
 
 //halaman berita
 //berita peristiwa
 
-    Route::get('/beritap', [BeritapController::class, 'index'])->name('beritap.index');
-    Route::get('/beritap/create', [BeritapController::class, 'create'])->name('beritap.create');
-    Route::post('/beritap', [BeritapController::class, 'store'])->name('beritap.store');
-    Route::get('/beritap/{id}', [BeritapController::class, 'show'])->name('beritap.show');
-    Route::get('/beritap/{id}/edit', [BeritapController::class, 'edit'])->name('beritap.edit');
-    Route::put('/beritap/{id}', [BeritapController::class, 'update'])->name('beritap.update');
-    Route::delete('/beritap/{id}', [BeritapController::class, 'destroy'])->name('beritap.destroy');
+    Route::get('/admin/beritap', [BeritapController::class, 'index'])->name('admin.beritap.index');
+    Route::get('/admin/beritap/create', [BeritapController::class, 'create'])->name('admin.beritap.create');
+    Route::post('/admin/beritap', [BeritapController::class, 'store'])->name('admin.beritap.store');
+    Route::get('/admin/beritap/{id}', [BeritapController::class, 'show'])->name('admin.beritap.show');
+    Route::get('/admin/beritap/{id}/edit', [BeritapController::class, 'edit'])->name('admin.beritap.edit');
+    Route::put('/admin/beritap/{id}', [BeritapController::class, 'update'])->name('admin.beritap.update');
+    Route::delete('/admin/beritap/{id}', [BeritapController::class, 'destroy'])->name('admin.beritap.destroy');
 
 
     Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan.index');

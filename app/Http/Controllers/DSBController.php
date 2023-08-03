@@ -10,12 +10,12 @@ class DSBController extends Controller
     public function index()
     {
         $dsb = DSB::all();
-        return view('dsb.index', compact('dsb'));
+        return view('admin.dsb.index', compact('dsb'));
     }
 
     public function create()
     {
-        return view('dsb.create');
+        return view('admin.dsb.create');
     }
 
     public function store(Request $request)
@@ -27,19 +27,19 @@ class DSBController extends Controller
 
         dsb::create($validatedData);
 
-        return redirect('/dsb')->with('success', 'Data berhasil disimpan.');
+        return redirect('/admin/dsb')->with('success', 'Data berhasil disimpan.');
     }
 
     public function show($id)
     {
         $dsb = DSB::findOrFail($id);
-        return view('dsb.show', compact('dsb'));
+        return view('admin.dsb.show', compact('dsb'));
     }
 
     public function edit($id)
     {
         $dsb = DSB::findOrFail($id);
-        return view('dsb.edit', compact('dsb'));
+        return view('admin.dsb.edit', compact('dsb'));
     }
 
     public function update(Request $request, $id)
@@ -51,7 +51,7 @@ class DSBController extends Controller
 
         dsb::whereId($id)->update($validatedData);
 
-        return redirect('/dsb')->with('success', 'Data berhasil diperbarui.');
+        return redirect('/admin/dsb')->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -59,6 +59,6 @@ class DSBController extends Controller
         $dsb = DSB::findOrFail($id);
         $dsb->delete();
 
-        return redirect('/dsb')->with('success', 'Data berhasil dihapus.');
+        return redirect('/admin/dsb')->with('success', 'Data berhasil dihapus.');
     }
 }
