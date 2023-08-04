@@ -25,10 +25,9 @@
                 <tr>
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->judul }}</td>
-                    <td>{{ $data->sub_judul }}</td>
                     <td>{{ $data->keterangan }}</td>
                     <td>
-                        <a href="{{ route('admin.dsb.show', $data->id) }}" class="btn btn-primary">Lihat</a>
+                        <!-- <a href="{{ route('admin.dsb.show', $data->id) }}" class="btn btn-primary">Lihat</a> -->
                         <a href="{{ route('admin.dsb.edit', $data->id) }}" class="btn btn-success">Edit</a>
                         <form action="{{ route('admin.dsb.destroy', $data->id) }}" method="POST" class="d-inline">
                             @csrf

@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\sejarah;
+use Illuminate\Http\Request;
+
+namespace App\Http\Controllers;
+
 use App\Models\Sejarah;
 use Illuminate\Http\Request;
 
@@ -20,45 +26,38 @@ class SejarahController extends Controller
 
     public function store(Request $request)
     {
-        $sejarah = new Sejarah;
-        $sejarah->judul = $request->input('judul');
-        $sejarah->sub_judul = $request->input('sub_judul');
-        $sejarah->judul_keterangan = $request->input('judul_keterangan');
-        $sejarah->keterangan = $request->input('keterangan');
-        $sejarah->save();
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'keterangan' => 'required',
+        ]);
 
-        return redirect()->route('admin/sejarah.index')->with('success', 'Sejarah berhasil ditambahkan.');
-    }
+        Sejarah::create($validatedData);
 
-    public function show($id)
-    {
-        $sejarah = Sejarah::find($id);
-        return view('admin.sejarah.show', compact('sejarah'));
+        return redirect()->route('admin.sejarah.index')->with('success', 'Data sejarah berhasil disimpan');
     }
 
     public function edit($id)
     {
-        $sejarah = Sejarah::find($id);
+        $sejarah = Sejarah::findOrFail($id);
         return view('admin.sejarah.edit', compact('sejarah'));
     }
 
     public function update(Request $request, $id)
     {
-        $sejarah = Sejarah::find($id);
-        $sejarah->judul = $request->input('judul');
-        $sejarah->sub_judul = $request->input('sub_judul');
-        $sejarah->judul_keterangan = $request->input('judul_keterangan');
-        $sejarah->keterangan = $request->input('keterangan');
-        $sejarah->save();
+        $validatedData = $request->validate([
+            'judul' => 'required',
+            'keterangan' => 'required',
+        ]);
 
-        return redirect()->route('admin/sejarah.index')->with('success', 'Sejarah berhasil diperbarui.');
+        sejarah::where('id', $id)->update($validatedData);
+
+        return redirect()->route('admin.sejarah.index')->with('success', 'Data sejarah berhasil diperbarui');
     }
 
     public function destroy($id)
     {
-        $sejarah = Sejarah::find($id);
-        $sejarah->delete();
+        sejarah::destroy($id);
 
-        return redirect()->route('admin/sejarah.index')->with('success', 'Sejarah berhasil dihapus.');
+        return redirect()->route('admin.sejarah.index')->with('success', 'Data sejarah berhasil dihapus');
     }
 }

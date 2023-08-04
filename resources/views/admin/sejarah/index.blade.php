@@ -10,8 +10,6 @@
             <tr>
                 <th>ID</th>
                 <th>Judul</th>
-                <th>Sub Judul</th>
-                <th>Judul Keterangan</th>
                 <th>Keterangan</th>
                 <th>Aksi</th>
             </tr>
@@ -21,8 +19,6 @@
                 <tr>
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->judul }}</td>
-                    <td>{{ $data->sub_judul }}</td>
-                    <td>{{ $data->judul_keterangan }}</td>
                     <td>{{ $data->keterangan }}</td>
                     <td>
                         <a href="{{ route('admin.sejarah.show', $data->id) }}" class="btn btn-info">Detail</a>

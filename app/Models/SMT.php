@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class SMT extends Model
 {
     protected $table = 'smt';
-    protected $fillable = ['judul', 'sub_judul', 'keterangan'];
+    protected $fillable = ['judul' , 'keterangan'];
 }

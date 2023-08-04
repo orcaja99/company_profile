@@ -22,7 +22,6 @@ class SMTController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'required',
-            'sub_judul' => 'required',
             'keterangan' => 'required',
         ]);
 
@@ -47,7 +46,6 @@ class SMTController extends Controller
     {
         $validatedData = $request->validate([
             'judul' => 'required',
-            'sub_judul' => 'required',
             'keterangan' => 'required',
         ]);
 

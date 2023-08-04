@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('sejarahs', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('sub_judul');
-            $table->string('judul_keterangan');
             $table->text('keterangan');
             $table->timestamps();
         });

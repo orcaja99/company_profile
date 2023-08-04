@@ -11,8 +11,6 @@ class Sejarah extends Model
 
     protected $fillable = [
         'judul',
-        'sub_judul',
-        'judul_keterangan',
         'keterangan',
     ];
 }

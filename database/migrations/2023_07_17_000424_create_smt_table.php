@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('smt', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
-            $table->string('sub_judul');
             $table->text('keterangan');
             $table->timestamps();
         });

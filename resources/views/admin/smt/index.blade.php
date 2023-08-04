@@ -16,7 +16,6 @@
             <tr>
                 <th>ID</th>
                 <th>Judul</th>
-                <th>Sub Judul</th>
                 <th>Keterangan</th>
                 <th>Aksi</th>
             </tr>
@@ -26,10 +25,9 @@
                 <tr>
                     <td>{{ $data->id }}</td>
                     <td>{{ $data->judul }}</td>
-                    <td>{{ $data->sub_judul }}</td>
                     <td>{{ $data->keterangan }}</td>
                     <td>
-                        <a href="{{ route('admin.smt.show', $data->id) }}" class="btn btn-primary">Lihat</a>
+                        <!-- <a href="{{ route('admin.smt.show', $data->id) }}" class="btn btn-primary">Lihat</a> -->
                         <a href="{{ route('admin.smt.edit', $data->id) }}" class="btn btn-success">Edit</a>
                         <form action="{{ route('admin.smt.destroy', $data->id) }}" method="POST" class="d-inline">
                             @csrf
