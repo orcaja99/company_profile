@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 
 @section('admin-content')
-    <h1>Tambah Data Strukyur Manajemen Mutu</h1>
+    <h1>Tambah Data Struktur Manajemen Mutu</h1>
 
     <form action="{{ route('admin.smt.store') }}" method="POST">
         @csrf

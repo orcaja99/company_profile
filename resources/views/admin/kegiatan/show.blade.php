@@ -19,6 +19,7 @@
                 </div>
                 <div class="col-md-6">
                     <p><strong>Tanggal:</strong> {{ $kegiatan->tanggal }}</p>
+                    <p><strong>Gambar:</strong> {{ $kegiatan->gambar }}</p>
                     <p><strong>Keterangan:</strong> {{ $kegiatan->keterangan }}</p>
                     <p><strong>Sumber:</strong> {{ $kegiatan->sumber }}</p>
                 </div>

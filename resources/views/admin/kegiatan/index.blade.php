@@ -42,15 +42,16 @@
                             <td>{{ $item->tanggal }}</td>
                             <td>
                             @if($item->gambar)
-                            <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar beritap">
-                            @else
-                            Tidak ada gambar
+                                 <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar kegiatan" style="width: 200px; height: 150px;">
+                                 @else
+                                    Tidak ada gambar
                             @endif
+
                         </td>
                             <td>{{ $item->keterangan }}</td>
                             <td>{{ $item->sumber }}</td>
                             <td class="action-btns">
-                                <a href="{{ route('admin.kegiatan.show', $item->id) }}" class="btn btn-info">Detail</a>
+                                <!-- <a href="{{ route('admin.kegiatan.show', $item->id) }}" class="btn btn-info">Detail</a> -->
                                 <a href="{{ route('admin.kegiatan.edit', $item->id) }}" class="btn btn-primary">Edit</a>
                                 <form action="{{ route('admin.kegiatan.destroy', $item->id) }}" method="POST" class="d-inline">
                                     @csrf

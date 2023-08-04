@@ -10,13 +10,13 @@ class BeritapController extends Controller
 {
     public function index()
     {
-        $beritaps = beritap::all();
+        $beritaps = Beritap::all();
         return view('admin.beritap.index', compact('beritaps'));
     }
 
     public function create()
     {
-        return view('beritap.create');
+        return view('admin.beritap.create');
     }
 
     public function store(Request $request)
@@ -64,7 +64,7 @@ class BeritapController extends Controller
             'keterangan' => 'required',
         ]);
 
-        $beritap = Beritap::find($id);
+        $beritap = beritap::find($id);
         $beritap->judul = $validatedData['judul'];
 
         // Jika ada gambar baru diupload, hapus gambar lama dan upload gambar baru
