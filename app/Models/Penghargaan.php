@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Penghargaan extends Model
 {
+    use HasFactory;
     protected $fillable = ['judul', 'gambar', 'tanggal', 'keterangan'];
 }
 

@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\Storage;
 
 class PengumumenController extends Controller
 {
+
+
+    public static function getData()
+    {
+        $pengumumen = Pengumumen::all();
+        return $pengumumen; // Mengembalikan data sebagai koleksi
+    }
+
+
     public function index()
     {
         $pengumumens = Pengumumen::all();

@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\File;
 
 class JPegawaiController extends Controller
 {
+
+    public static function getData()
+    {
+        $jpegawai= JPegawai::all();
+        return $jpegawai; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
     $jpegawai = JPegawai::all();

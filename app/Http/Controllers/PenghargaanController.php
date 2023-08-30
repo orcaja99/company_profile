@@ -8,11 +8,19 @@ use Illuminate\Support\Facades\Storage;
 
 class PenghargaanController extends Controller
 {
+
+    public static function getData()
+    {
+        $penghargaan = Penghargaan::paginate(6);
+        return $penghargaan; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
-        $penghargaan = Penghargaan::all();
+        $penghargaan = Penghargaan::paginate(6);
         return view('admin.penghargaan.index', compact('penghargaan'));
     }
+
 
     public function create()
     {
@@ -48,6 +56,13 @@ class PenghargaanController extends Controller
         $penghargaan = Penghargaan::find($id);
         return view('admin.penghargaan.show', compact('penghargaan'));
     }
+
+    public function showU($id)
+    {
+        $penghargaan = Penghargaan::find($id);
+        return view('homepage.detailpenghargaan', compact('penghargaan'));
+    }
+
 
     public function edit($id)
     {

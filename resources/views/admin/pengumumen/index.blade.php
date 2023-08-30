@@ -5,29 +5,9 @@
     <html>
     <head>
         <br />
-        <title>Daftar pengumumen</title>
-        <!-- Include Bootstrap CSS -->
+        <title>Daftar pengumuman</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <!-- Optional custom styles for better presentation -->
-        <style>
-            body {
-                padding: 20px;
-            }
-            table {
-                width: 100%;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            img {
-                max-width: 100px;
-                max-height: 100px;
-            }
-            .action-btns {
-                white-space: nowrap;
-            }
-        </style>
+
     </head>
     <body>
         <div class="container mt-4">

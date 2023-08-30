@@ -15,6 +15,13 @@ class GIController extends Controller
     return view('admin.gi.index', compact('gi'));
 }
 
+
+     static function getData()
+    {
+        $gi= GI::all();
+        return $gi; // Mengembalikan data sebagai koleksi
+    }
+
     public function create()
     {
         return view('admin.gi.create');

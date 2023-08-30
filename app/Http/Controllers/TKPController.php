@@ -8,12 +8,19 @@ use Illuminate\Support\Facades\File;
 
 class TKPController extends Controller
 {
+
+    public static function getData()
+    {
+        $tkp= TKP::all();
+        return $tkp; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
     $tkp = TKP::all();
 
     return view('admin.tkp.index', compact('tkp'));
-}
+    }
 
     public function create()
     {

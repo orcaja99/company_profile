@@ -4,13 +4,13 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Tambah berita</title>
+        <title>Tambah artikel</title>
         <!-- Include Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container mt-5">
-            <h1 class="mb-4">Tambah berita</h1>
+            <h1 class="mb-4">Tambah artikel</h1>
 
             @if ($errors->any())
             <div class="alert alert-danger">

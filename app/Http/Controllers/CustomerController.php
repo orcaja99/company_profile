@@ -126,11 +126,7 @@ class CustomerController extends Controller
 
     public function home_index()
     {
-        $sliderfoto = SliderFoto::all();
-        $pengumumen = Pengumumen::all();
-        $berita = Berita::all();
-        $beritap = Beritap::all();
-        return view('customer.home.home', compact('sliderfoto', 'pengumumen', 'berita', 'beritap'));
+        return view('layouts.footer');
     }
     public function home_detail_berita($id)
     {

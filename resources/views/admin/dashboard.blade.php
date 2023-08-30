@@ -41,7 +41,7 @@
             <a class="nav-link {{ request()->is('admin.jp*') ? 'active' : '' }}" href="{{ route('admin.jp.index') }}">Jumlah Pelanggan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link{{ request()->is('admin.jpegawai*') ? 'active' : '' }}" href="{{ route('admin.jpegawai.index') }}">Jumalah Pegawain</a>
+            <a class="nav-link{{ request()->is('admin.jpegawai*') ? 'active' : '' }}" href="{{ route('admin.jpegawai.index') }}">Jumalah Pegawai</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ request()->is('admin.kegiatan*') ? 'active' : '' }}" href="{{ route('admin.kegiatan.index') }}">kegiatan</a>

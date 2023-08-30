@@ -2,7 +2,7 @@
 
 @section('admin-content')
 
-        <h1>Edit pengumumen</h1>
+        <h1>Edit pengumuman</h1>
 
         @if ($errors->any())
         <div>

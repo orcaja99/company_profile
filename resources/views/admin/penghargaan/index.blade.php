@@ -6,28 +6,7 @@
     <head>
         <br />
         <title>Daftar penghargaan</title>
-        <!-- Include Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <!-- Optional custom styles for better presentation -->
-        <style>
-            body {
-                padding: 20px;
-            }
-            table {
-                width: 100%;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            img {
-                max-width: 100px;
-                max-height: 100px;
-            }
-            .action-btns {
-                white-space: nowrap;
-            }
-        </style>
     </head>
     <body>
         <div class="container mt-4">
@@ -60,7 +39,7 @@
                             <td>{{ $item->judul }}</td>
                             <td>
                                 @if($item->gambar)
-                                <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar penghargaan">
+                                <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar penghargaan" width="100">
                                 @else
                                 Tidak ada gambar
                                 @endif

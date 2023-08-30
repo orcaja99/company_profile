@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use App\Http\Controllers\SliderFotoController;
+use App\Http\Controllers\PengumumenController;
 
 class AppServiceProvider extends ServiceProvider
 {

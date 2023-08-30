@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\File;
 
 class SliderFotoController extends Controller
 {
+
+
     public function index()
     {
     $sliderFoto = SliderFoto::all();
 
     return view('admin.sliderfoto.index', compact('sliderFoto'));
-}
+    }
 
     public function create()
     {
@@ -23,7 +25,7 @@ class SliderFotoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $gambar = $request->file('gambar');
@@ -46,7 +48,7 @@ class SliderFotoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $sliderFoto = SliderFoto::findOrFail($id);
@@ -70,5 +72,11 @@ class SliderFotoController extends Controller
         $sliderFoto->delete();
 
         return redirect()->route('admin.sliderfoto.index')->with('success', 'Slider foto berhasil dihapus.');
+    }
+
+    public static function getData()
+    {
+        $sliderFoto = SliderFoto::all();
+        return $sliderFoto; // Mengembalikan data sebagai koleksi
     }
 }

@@ -5,13 +5,13 @@
     <html>
     <head>
         <br />
-        <title>Daftar berita</title>
+        <title>Daftar artikel</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container mt-4">
-            <h1>Daftar berita</h1>
+            <h1>Daftar artikel</h1>
 
             @if (session('success'))
             <div class="alert alert-success mt-3">
@@ -40,7 +40,7 @@
                             <td>{{ $item->judul }}</td>
                             <td>
                                 @if($item->gambar)
-                                <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar berita">
+                                <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar berita" width="100" height="100">
                                 @else
                                 Tidak ada gambar
                                 @endif

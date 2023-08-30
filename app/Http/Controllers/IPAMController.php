@@ -8,12 +8,20 @@ use Illuminate\Support\Facades\File;
 
 class IPAMController extends Controller
 {
+
+    
+    static function getData()
+    {
+        $ipam= IPAM::all();
+        return $ipam; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
     $ipam = IPAM::all();
 
     return view('admin.ipam.index', compact('ipam'));
-}
+    }
 
     public function create()
     {

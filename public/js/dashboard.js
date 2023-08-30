@@ -1,10 +1,25 @@
-const sidebar = document.getElementById('sidebar');
-const hamburgerBtn = document.createElement('button');
-hamburgerBtn.innerHTML = '<span>&#9776;</span>';
-hamburgerBtn.classList.add('hamburger-btn');
+function handleScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}
 
-hamburgerBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('show-sidebar');
+window.addEventListener('scroll', handleScroll);
+
+
+var mySwiper = new Swiper('.swiper-container', {
+    // Pengaturan Swiper.js
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 });
-
-sidebar.prepend(hamburgerBtn);

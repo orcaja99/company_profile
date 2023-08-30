@@ -5,7 +5,7 @@
 <html>
 <head>
     <br />
-    <title>Daftar beritap</title>
+    <title>Daftar Pristiwa</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -20,7 +20,7 @@
         </div>
         @endif
 
-        <a href="{{ route('admin.beritap.create') }}" class="btn btn-primary mt-3">Tambah beritap</a>
+        <a href="{{ route('admin.beritap.create') }}" class="btn btn-primary mt-3">Tambah berita pristiwa</a>
 
         <div class="table-responsive mt-4">
             <table class="table table-striped table-bordered">
@@ -41,7 +41,7 @@
                         <td>{{ $item->judul }}</td>
                         <td>
                             @if($item->gambar)
-                            <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar beritap">
+                            <img src="{{ asset('storage/images/' . $item->gambar) }}" alt="Gambar beritap" width="100" height="100">
                             @else
                             Tidak ada gambar
                             @endif
@@ -54,7 +54,7 @@
                             <form action="{{ route('admin.beritap.destroy', $item->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus beritap ini?')">Hapus</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus berita pristiwa ini?')">Hapus</button>
                             </form>
                         </td>
                     </tr>

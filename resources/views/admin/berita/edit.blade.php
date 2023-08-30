@@ -4,13 +4,13 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Edit berita</title>
+        <title>Edit artikel</title>
         <!-- Include Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container mt-4">
-            <h1>Edit berita</h1>
+            <h1>Edit artikel</h1>
 
             @if ($errors->any())
             <div class="alert alert-danger">

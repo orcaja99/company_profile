@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
+
+    public static function getData()
+    {
+        $berita = Berita::paginate(6);
+        return $berita; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
         $beritas = Berita::all();
@@ -47,6 +54,13 @@ class BeritaController extends Controller
     {
         $berita = Berita::find($id);
         return view('admin.berita.show', compact('berita'));
+    }
+
+    
+    public function showU($id)
+    {
+        $berita = Berita::find($id);
+        return view('homepage.detailberita', compact('berita'));
     }
 
     public function edit($id)

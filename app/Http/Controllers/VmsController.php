@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 
 class VmsController extends Controller
 {
+
+    public static function getData()
+    {
+        $vms= Vms::all();
+        return $vms; // Mengembalikan data sebagai koleksi
+    }
+
+
     public function index()
     {
         $vms = Vms::all();

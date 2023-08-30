@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\Beritap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class BeritapController extends Controller
 {
+
+    public static function getData()
+    {
+        $beritap = Beritap::paginate(6);
+        return $beritap; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
         $beritaps = Beritap::all();
@@ -47,6 +55,13 @@ class BeritapController extends Controller
     {
         $beritap = Beritap::find($id);
         return view('admin.beritap.show', compact('beritap'));
+    }
+
+    
+    public function showU($id)
+    {
+        $beritap = Beritap::find($id);
+        return view('homepage.detailpristiwa', compact('beritap'));
     }
 
     public function edit($id)

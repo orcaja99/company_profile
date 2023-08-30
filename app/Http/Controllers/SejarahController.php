@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 
 class SejarahController extends Controller
 {
+
+
+    public static function getData()
+    {
+        $sejarah = Sejarah::all();
+        return $sejarah; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
         $sejarah = Sejarah::all();

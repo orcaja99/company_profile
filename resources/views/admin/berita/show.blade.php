@@ -4,13 +4,13 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Detail berita</title>
+        <title>Detail artikel</title>
         <!-- Include Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container mt-4">
-            <h1>Detail berita</h1>
+            <h1>Detail artikel</h1>
 
             <div class="row">
                 <div class="col-md-6">
@@ -20,7 +20,7 @@
                         <strong>Gambar:</strong>
                         @if($berita->gambar)
                         <br>
-                        <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Gambar berita">
+                        <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Gambar berita"  height="100"> 
                         @else
                         Tidak ada gambar
                         @endif

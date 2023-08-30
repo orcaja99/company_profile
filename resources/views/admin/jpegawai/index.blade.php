@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 
 @section('admin-content')
-    <h1>Daftar Jumlah Pelanggan</h1>
+    <h1>Daftar Jumlah Pegawai</h1>
 
     @if (session('success'))
         <div class="alert alert-success">

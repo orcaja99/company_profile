@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Storage;
 
 class KegiatanController extends Controller
 {
-    // public function __construct()
-    // {
-    //     // Gunakan middleware 'admin.auth' pada semua metode kecuali 'index' dan 'show'
-    //     $this->middleware('admin.auth')->except(['index', 'show']);
-    // }
+    public static function getData()
+    {
+        $kegiatan = Kegiatan::paginate(6);
+        return $kegiatan; // Mengembalikan data sebagai koleksi
+    }
 
     public function index()
     {
@@ -49,7 +49,6 @@ class KegiatanController extends Controller
         $kegiatan = new Kegiatan;
         $kegiatan->judul = $validatedData['judul'];
         $kegiatan->tanggal = $validatedData['tanggal'];
-        $kegiatan->keterangan = $validatedData['keterangan'];
         $kegiatan->gambar = $gambarNama;
         $kegiatan->keterangan = $validatedData['keterangan'];
         $kegiatan->sumber = $validatedData['sumber'];
@@ -63,6 +62,13 @@ class KegiatanController extends Controller
         $kegiatan = Kegiatan::find($id);
         return view('admin.kegiatan.show', compact('kegiatan'));
     }
+
+    public function showU($id)
+    {
+        $kegiatan = Kegiatan::find($id);
+        return view('homepage.detailkegiatan', compact('kegiatan'));
+    }
+
 
     public function edit($id)
     {

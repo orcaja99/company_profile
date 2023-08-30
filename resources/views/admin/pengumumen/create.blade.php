@@ -1,13 +1,13 @@
 @extends('admin.dashboard')
 
 @section('admin-content')
-        <title>Tambah pengumumen</title>
+        <title>Tambah pengumuman</title>
         <!-- Include Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container mt-5">
-            <h1 class="mb-4">Tambah pengumumen</h1>
+            <h1 class="mb-4">Tambah pengumuman</h1>
 
             @if ($errors->any())
             <div class="alert alert-danger">

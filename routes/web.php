@@ -18,6 +18,7 @@ use App\Http\Controllers\TKPController;
 use App\Http\Controllers\SABController;
 use App\Http\Controllers\IPAMController;
 use App\Http\Controllers\GIController;
+use App\Http\Controllers\HomeController;
 
 //login admin
 use App\Http\Controllers\AdminAuthController;
@@ -25,6 +26,12 @@ use App\Http\Controllers\AdminDashboardController;
 
 //halaman custumer
 use App\Http\Controllers\CustomerController;
+use App\Models\Beritap;
+use App\Models\IPAM;
+use App\Models\JPegawai;
+use App\Models\Kegiatan;
+use App\Models\SliderFoto;
+use App\Models\TKP;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,10 +44,117 @@ use App\Http\Controllers\CustomerController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//hoemapage
+Route::get('/homepage', function () {
+    $sliderFoto = SliderFotoController::getData();
+    $pengumumen = PengumumenController::getData();
+
+    return view('homepage.sliderfoto', compact('sliderFoto', 'pengumumen'));
+})->name('homepage');
+
+Route::get('/homepage/standard-manajemen-mutu', function () {
+    $smm = SMTController::getData();
+
+    return view('homepage.smm', compact('smm'));
 });
 
+Route::get('/homepage/sejarah', function () {
+    $sejarah = SejarahController::getData();
+
+    return view('homepage.sejarah', compact('sejarah'));
+});
+
+Route::get('/homepage/jumlah-pegawai', function () {
+    $jpegawai = JPegawaiController::getData();
+
+    return view('homepage.jpegawai', compact('jpegawai'));
+});
+
+Route::get('/homepage/jumlah-pelanggan', function () {
+    $jp = JPController::getData();
+
+    return view('homepage.jp', compact('jp'));
+});
+
+Route::get('/homepage/visi-misi-strategi', function () {
+    $vms = VmsController::getData();
+
+    return view('homepage.vms', compact('vms'));
+});
+
+Route::get('/homepage/struktur-organisasi', function () {
+    $so = SOController::getData();
+
+    return view('homepage.so', compact('so'));
+});
+
+Route::get('/homepage/penghargaan', function () {
+    $penghargaan = PenghargaanController::getData();
+
+    return view('homepage.penghargaan', compact('penghargaan'));
+})->name('penghargaan.index');
+
+Route::get('/homepage/penghargaan/{id}', [PenghargaanController::class, 'showU'])->name('penghargaan.show');
+
+
+Route::get('/homepage/kegiatan', function () {
+    $kegiatan = KegiatanController::getData();
+
+    return view('homepage.kegiatan', compact('kegiatan'));
+})->name('kegiatan.index');
+
+Route::get('/homepage/kegiatan/{id}', [kegiatanController::class, 'showU'])->name('kegiatan.show');
+
+Route::get('/homepage/artikel', function () {
+    $berita = beritaController::getData();
+
+    return view('homepage.artikel', compact('berita'));
+})->name('artikel.index');
+
+Route::get('/homepage/artikel/{id}', [beritaController::class, 'showU'])->name('artikel.show');
+
+
+Route::get('/homepage/pristiwa', function () {
+    $beritap = BeritapController::getData();
+
+    return view('homepage.pristiwa', compact('beritap'));
+})->name('pristiwa.index');
+
+Route::get('/homepage/pristiwa/{id}', [BeritapController::class, 'showU'])->name('pristiwa.show');
+
+
+Route::get('/homepage/daftar-sambungan-baru', function () {
+    $dsb = DSBController::getData();
+
+    return view('homepage.dsb', compact('dsb'));
+});
+
+Route::get('/homepage/tabel-klasifikasi-pelanggan', function () {
+    $tkp = TKPController::getData();
+
+    return view('homepage.tkp', compact('tkp'));
+});
+
+Route::get('/homepage/sambungan-air-baku', function () {
+    $sab = SABController::getData();
+
+    return view('homepage.sab', compact('sab'));
+});
+
+
+Route::get('/homepage/Instalasi-pengolahan-air-minum', function () {
+    $ipam = IPAMController::getData();
+
+    return view('homepage.ipam', compact('ipam'));
+});
+
+Route::get('/homepage/galeri-IPA', function () {
+    $gi= GIController::getData();
+
+    return view('homepage.gi', compact('gi'));
+});
+
+//
 Route::group(['middleware' => 'admin.login'], function () {
 //halaman home
 //slider foto

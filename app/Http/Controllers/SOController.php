@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\File;
 
 class SOController extends Controller
 {
+
+
+    public static function getData()
+    {
+        $so= SO::all();
+        return $so; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
     $so = SO::all();

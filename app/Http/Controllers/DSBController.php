@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class DSBController extends Controller
 {
+
+    public static function getData()
+    {
+        $dsb = dsb::all();
+        return $dsb; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
         $dsb = DSB::all();

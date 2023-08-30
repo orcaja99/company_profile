@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class SMTController extends Controller
 {
+
+    public static function getData()
+    {
+        $smt = SMT::all();
+        return $smt; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
         $smt = SMT::all();

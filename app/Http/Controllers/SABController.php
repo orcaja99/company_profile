@@ -7,12 +7,19 @@ use Illuminate\Support\Facades\Storage;
 
 class SABController extends Controller
 {
+    
+    public static function getData()
+    {
+        $sab = SAB::all();
+        return $sab; // Mengembalikan data sebagai koleksi
+    }
+    
     public function index()
     {
     $sab = SAB::all();
 
     return view('admin.sab.index', compact('sab'));
-}
+    }
 
     public function create()
     {

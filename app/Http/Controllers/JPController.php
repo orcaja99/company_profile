@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\File;
 
 class JPController extends Controller
 {
+
+    public static function getData()
+    {
+        $jp= JP::all();
+        return $jp; // Mengembalikan data sebagai koleksi
+    }
+
     public function index()
     {
     $jp = JP::all();
