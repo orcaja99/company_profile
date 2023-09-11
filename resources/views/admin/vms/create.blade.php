@@ -7,21 +7,21 @@
         @csrf
         <div class="form-group">
             <label for="visi">Visi</label>
-            <textarea class="form-control tinymce" name="visi" id="visi" rows="3">{{ old('visi') }}</textarea>
+            <textarea class="form-control " name="visi" id="visi" rows="3">{{ old('visi') }}</textarea>
             @error('visi')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <label for="misi">Misi</label>
-            <textarea class="form-control tinymce" name="misi" id="misi" rows="3">{{ old('misi') }}</textarea>
+            <textarea class="form-control " name="misi" id="misi" rows="3">{{ old('misi') }}</textarea>
             @error('misi')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <label for="strategi">Strategi</label>
-            <textarea class="form-control tinymce" name="strategi" id="strategi" rows="3">{{ old('strategi') }}</textarea>
+            <textarea class="form-control " name="strategi" id="strategi" rows="3">{{ old('strategi') }}</textarea>
             @error('strategi')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -29,14 +29,5 @@
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
     
-    <script src="https://cdn.tiny.cloud/1/fhnx5fbt5ehz1vnm070er1tz295erjsapr3jr7g3wdy808hw/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            tinymce.init({
-                selector: '.tinymce',
-                plugins: 'lists advlist',
-                toolbar: 'undo redo | styleselect | bold italic underline | bullist numlist | alignleft aligncenter alignright alignjustify | outdent indent',
-            });
-        });
-    </script>
+
 @endsection

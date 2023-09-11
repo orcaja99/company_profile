@@ -110,7 +110,7 @@
                 <h2>
                     INFO PELANGGAN
                 </h2><br>
-                <p><a href=#>Persyaratan Permohonan Menjadi Pelanggan</a></p>
+                <p><a href="/homepage/daftar-sambungan-baru">Persyaratan Permohonan Menjadi Pelanggan</a></p>
             </div>
             <div class="col-md-2">
                 <h2>

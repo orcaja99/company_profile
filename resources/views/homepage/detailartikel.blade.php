@@ -24,7 +24,7 @@
         <div class=" detail-p col-md-12">
             <h2>{{ $berita->judul }}</h2>
             <p>{{ $berita->tanggal }}</p>
-            <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Content Image" class="img-fluid">
+            <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Content Image" class="img-fluid" width="200" height="400">
             <p>{{ $berita->keterangan }}</p>
             <a href="{{ route('artikel.index') }}" class="btn btn-primary">Kembali</a>
         </div>

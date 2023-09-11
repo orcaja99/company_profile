@@ -24,7 +24,7 @@
         <div class=" detail-p col-md-12">
             <h2>{{ $beritap->judul }}</h2>
             <p>{{ $beritap->tanggal }}</p>
-            <img src="{{ asset('storage/images/' . $beritap->gambar) }}" alt="Content Image" class="img-fluid">
+            <img src="{{ asset('storage/images/' . $beritap->gambar) }}" alt="Content Image" class="img-fluid" width="300" height="400">
             <p>{{ $beritap->keterangan }}</p>
             <a href="{{ route('pristiwa.index') }}" class="btn btn-primary">Kembali</a>
         </div>

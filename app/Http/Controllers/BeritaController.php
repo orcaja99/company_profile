@@ -60,7 +60,7 @@ class BeritaController extends Controller
     public function showU($id)
     {
         $berita = Berita::find($id);
-        return view('homepage.detailberita', compact('berita'));
+        return view('homepage.detailartikel', compact('berita'));
     }
 
     public function edit($id)
@@ -104,4 +104,12 @@ class BeritaController extends Controller
 
         return redirect()->route('admin.berita.index')->with('success', 'berita berhasil dihapus.');
     }
+
+    public static function beritabaru()
+    {
+
+        return Berita::orderBy('tanggal', 'desc')->take(4)->get();
+    }
+
+
 }

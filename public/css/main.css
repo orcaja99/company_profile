@@ -6,6 +6,7 @@
 .navbar.scrolled {
   background-color: white !important;
   transition: background-color 0.3s ease;
+  border-bottom: 2px solid gray;
 }
 
 
@@ -45,7 +46,7 @@
 }
 
 .dropdown-menu-info {
-  max-height: 300px; /* Sesuaikan dengan tinggi maksimum yang diinginkan */
+  max-height: 300px; 
   overflow-y: auto;
 }
 
@@ -84,6 +85,24 @@ h2 a:hover{
   background-color: rgba(0, 0, 0, 0.7); 
 }
 
+.carousel-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.caption-text p {
+  padding: 10px;
+  color: white;
+}
+
+/* Adjust z-index to bring controls to the front */
+.carousel-control-prev, .carousel-control-next {
+  z-index: 999;
+}
+
 .carousel-item::before {
   content: "";
   position: absolute;
@@ -91,24 +110,28 @@ h2 a:hover{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.1); 
   z-index: 1;
 }
 
-/* Ganti warna latar belakang untuk konten pertama */
-.bg-konten-1 {
-  background-color: white; /* Ganti dengan warna latar belakang yang Anda inginkan */
-  color: black; /* Warna teks */
+
+.bg-full {
+  background-color: #edf2f7; 
+  color: black; 
 }
 
-.container-fluid.bg-konten-1 {
+.container-fluid h2{
+  margin-top: 10px;
+}
+
+.container .bg-konten-1 {
   margin-top: 20px;
 }
 
-/* Ganti warna latar belakang untuk konten kedua */
+
 .bg-konten-2 {
-  background-color: grey; /* Ganti dengan warna latar belakang yang Anda inginkan */
-  color: white; /* Warna teks */
+  background-color: grey; 
+  color: white; 
 }
 
 .container-fluid.bg-konten-2 {
@@ -116,9 +139,9 @@ h2 a:hover{
 }
 
 .service-item {
-  background-color: #d3d8e0; /* Warna abu-abu */
-  padding: 30px; /* Tambahkan jarak antara konten dengan kotaknya */
-  border-radius: 5px; /* Tambahkan sudut bulat pada kotak */
+  background-color: #d3d8e0; 
+  padding: 30px; 
+  border-radius: 5px; 
 }
 
 
@@ -140,12 +163,12 @@ h2 a:hover{
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content horizontally and vertically */
-  align-items: center; /* Center content horizontally */
-  text-align: center; /* Center text within the container */
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
   height: 100%;
   color: white;
-  font-size: 50px; /* Correct the property name for text size */
+  font-size: 50px; 
 }
 
 
@@ -211,9 +234,63 @@ h2 a:hover{
   display: none; 
 }
 
+.carousel-caption {
+  position: absolute;
+  bottom: 0; /* Menempatkan teks di bagian bawah slide */
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* Menambahkan latar belakang semi-transparan */
+  color: white;
+  padding: 10px; /* Menambahkan jarak sekitar teks */
+}
+
+
+.carousel-caption h3 {
+  font-size: 24px;
+  color: white;
+  position: relative; 
+  top: 95%; 
+}
 
 .carousel-caption p {
-  text-align: center; 
-  font-size: 24px;
-  color: white; 
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
+  top: 20%;
+}
+
+
+.bak h3 {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4em !important;
+  line-height: 1.2em; 
+  font-weight: 600;
+  font-size: 20px;
+}
+.bak p {
+  max-height: 4em !important;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  line-height: 1.3em;
+}
+
+.pengumuman h3 {
+  white-space: nowrap; 
+  max-height: 10em !important;
+  line-height: 3em; 
+  font-weight: 600;
+  font-size: 20px;
+}
+.pengumuman p {
+  max-height: 10em !important;
+  line-height: 2em;
+}
+
+pre{
+  font-style: normal;
+  font-family: "Arial", "Helvetica Neue";
+  font-size: 13px;
+  font-weight: 400;
 }

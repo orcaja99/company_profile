@@ -26,6 +26,7 @@
             <p>{{ $kegiatan->tanggal }}</p>
             <img src="{{ asset('storage/images/' . $kegiatan->gambar) }}" alt="Content Image" class="img-fluid">
             <p>{{ $kegiatan->keterangan }}</p>
+            <p>Sumber : {{ $kegiatan->sumber }}</p>
             <a href="{{ route('kegiatan.index') }}" class="btn btn-primary">Kembali</a>
         </div>
     </div>

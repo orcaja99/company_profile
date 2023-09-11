@@ -45,11 +45,13 @@ use App\Models\TKP;
 */
 
 //hoemapage
-Route::get('/homepage', function () {
+Route::get('/', function () {
     $sliderFoto = SliderFotoController::getData();
     $pengumumen = PengumumenController::getData();
+    $berita = BeritaController::getData();
+    
 
-    return view('homepage.sliderfoto', compact('sliderFoto', 'pengumumen'));
+    return view('homepage.sliderfoto', compact('sliderFoto', 'pengumumen','berita'));
 })->name('homepage');
 
 Route::get('/homepage/standard-manajemen-mutu', function () {

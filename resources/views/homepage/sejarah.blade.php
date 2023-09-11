@@ -23,9 +23,9 @@
   <div class="container">
       <div class="row justify-content-around gy-4">
           @foreach ($sejarah as $key => $sejarah)
-              <div class="col-lg-5 d-flex flex-column justify-content-center">
+              <div class="col-lg-12 d-flex flex-column justify-content-center">
                   <h3>{{ $sejarah->judul}}</h3>
-                  <p>{{ $sejarah->keterangan}}</p>
+                  <pre>{{ $sejarah->keterangan}}</pre>
               </div>
           @endforeach
       </div>

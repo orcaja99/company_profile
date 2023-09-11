@@ -23,10 +23,13 @@
   <div class="container">
       <div class="row justify-content-around gy-4">
           @foreach ($vms as $key => $vms)
-              <div class="col-lg-5 d-flex flex-column justify-content-center">
-                  <h3>{{ $vms->visi}}</h3>
-                  <h3>{{ $vms->misi}}</h3>
-                  <h3>{{ $vms->strategi}}</h3>
+              <div class="col-lg-12 d-flex flex-column justify-content-center">
+                  <h3>VISI</h3><br>
+                  <p>{{ $vms->visi}}</p>
+                  <h3>MISI</h3><br>
+                  <pre>{{ $vms->misi}}</pre>
+                  <h3>STRATEGI</h3><br>
+                  <pre>{{ $vms->strategi}}</pre>
               </div>
           @endforeach
       </div>

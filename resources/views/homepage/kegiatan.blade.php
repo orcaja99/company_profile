@@ -19,15 +19,19 @@
 </div>
 
 
-<section id="penghargaan" class="penghargaan">
+<section id="kegiatan" class="kegiatan">
     <div class="container">
-        <div class="kegiatan row mb-4">
+        <div class="bak row ">
             @foreach ($kegiatan as $k)
-            <div class="col-md-2 mx-auto">
-                <img src="{{ asset('storage/images/' . $k->gambar) }}" alt="Content Image" width="200" height="200">
-                <h3>{{ $k->judul }}</h3>
-                <p>{{ $k->tanggal }}</p>
-                <a href="{{ route('kegiatan.show', $k->id) }}" class="btn btn-primary">Baca Lebih Lanjut</a>
+            <div class="col-md-3">
+                <div class="mb-4"> 
+                    <img src="{{ asset('storage/images/' . $k->gambar) }}" alt="Content Image" width="250" height="200">
+                    <h3>{{ $k->judul }}</h3>
+                    <p>{{ $k->tanggal }}</p>
+                    <p>{{ $k->keterangan }}</p>
+                    <p>sumber: {{ $k->sumber }}</p>
+                    <a href="{{ route('kegiatan.show', $k->id) }}" class="btn btn-primary">Baca Lebih Lanjut</a>
+                </div>
             </div>
             @endforeach
         </div>

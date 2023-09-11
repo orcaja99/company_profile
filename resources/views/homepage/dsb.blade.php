@@ -23,9 +23,9 @@
   <div class="container">
       <div class="row justify-content-around gy-4">
           @foreach ($dsb as $key => $dsb)
-              <div class="col-lg-5 d-flex flex-column justify-content-center">
+              <div class="col-lg-12 d-flex flex-column justify-content-center">
                   <h3>{{ $dsb->judul}}</h3>
-                  <p>{{ $dsb->keterangan}}</p>
+                  <pre>{{ $dsb->keterangan}}</pre>
               </div>
           @endforeach
       </div>
