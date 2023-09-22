@@ -137,23 +137,23 @@ Route::get('/homepage/tabel-klasifikasi-pelanggan', function () {
     return view('homepage.tkp', compact('tkp'));
 });
 
-Route::get('/homepage/sambungan-air-baku', function () {
+Route::get('/homepage/sumber-air-baku', function () {
     $sab = SABController::getData();
 
     return view('homepage.sab', compact('sab'));
 });
 
 
-Route::get('/homepage/Instalasi-pengolahan-air-minum', function () {
+Route::get('/homepage/instalasi-pengolahan-air-minum', function () {
     $ipam = IPAMController::getData();
 
     return view('homepage.ipam', compact('ipam'));
 });
 
-Route::get('/homepage/galeri-IPA', function () {
+Route::get('/homepage/galeri-ipa', function () {
     $gi= GIController::getData();
 
-    return view('homepage.gi', compact('gi'));
+    return view('homepage.galeriipa', compact('gi'));
 });
 
 //
