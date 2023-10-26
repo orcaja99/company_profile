@@ -23,7 +23,7 @@
     <div class="row">
         <div class=" detail-p col-md-12">
             <h2>{{ $penghargaan->judul }}</h2>
-            <p>{{ $penghargaan->tanggal }}</p>
+            <p> <img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $penghargaan->tanggal }}</p>
             <img src="{{ asset('storage/images/' . $penghargaan->gambar) }}" alt="Content Image" class="img-fluid">
             <p>{{ $penghargaan->keterangan }}</p>
             <a href="{{ route('penghargaan.index') }}" class="btn btn-primary">Kembali</a>

@@ -81,6 +81,7 @@
           </li>
         </ul>
       </div>
+
       <!-- Main Content -->
       <div class="col-md-9 py-4 main-content">
         @yield('admin-content')

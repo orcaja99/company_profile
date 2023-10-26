@@ -27,7 +27,7 @@
                 <div class="mb-4"> 
                     <img src="{{ asset('storage/images/' . $artikel->gambar) }}" alt="Content Image" width="250" height="200">
                     <h3>{{ $artikel->judul }}</h3>
-                    <p>{{ $artikel->tanggal }}</p>
+                    <p> <img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $artikel->tanggal }}</p>
                     <p>{{ $artikel->keterangan }}</p>
                     <a href="{{ route('artikel.show', $artikel->id) }}" class="btn btn-primary">Baca Lebih Lanjut</a>
                 </div>

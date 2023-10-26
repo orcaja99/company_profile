@@ -49,7 +49,7 @@
                         </div>
                         <div>
                             <h3>{{ $pengumuman->judul }}</h3>
-                            <p>{{ $pengumuman->tanggal }}</p>
+                            <p> <img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $pengumuman->tanggal }}</p>
                             <pre>{{ $pengumuman->keterangan }}</pre>
                         </div>
                     </div>
@@ -81,10 +81,6 @@
 </div>
 
 </div>
-
-root@dockerfile:~/latihan# vim Dockerfile
-    
-    
 
 
 

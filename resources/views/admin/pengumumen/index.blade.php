@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="container mt-4">
-            <h1>Daftar pengumumen</h1>
+            <h1>Daftar pengumuman</h1>
 
             @if (session('success'))
             <div class="alert alert-success mt-3">

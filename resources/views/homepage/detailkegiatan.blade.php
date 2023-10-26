@@ -23,7 +23,7 @@
     <div class="row">
         <div class=" detail-p col-md-12">
             <h2>{{ $kegiatan->judul }}</h2>
-            <p>{{ $kegiatan->tanggal }}</p>
+            <p> <img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $kegiatan->tanggal }}</p>
             <img src="{{ asset('storage/images/' . $kegiatan->gambar) }}" alt="Content Image" class="img-fluid">
             <p>{{ $kegiatan->keterangan }}</p>
             <p>Sumber : {{ $kegiatan->sumber }}</p>

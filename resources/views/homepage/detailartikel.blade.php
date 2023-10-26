@@ -23,7 +23,7 @@
     <div class="row">
         <div class=" detail-p col-md-12">
             <h2>{{ $berita->judul }}</h2>
-            <p>{{ $berita->tanggal }}</p>
+            <p> <img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $berita->tanggal }}</p>
             <img src="{{ asset('storage/images/' . $berita->gambar) }}" alt="Content Image" class="img-fluid" width="200" height="400">
             <p>{{ $berita->keterangan }}</p>
             <a href="{{ route('artikel.index') }}" class="btn btn-primary">Kembali</a>

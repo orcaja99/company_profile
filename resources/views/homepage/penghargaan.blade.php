@@ -26,7 +26,7 @@
             <div class="col-md-2 mx-auto">
                 <img src="{{ asset('storage/images/' . $s->gambar) }}" alt="Content Image" width="200" height="200">
                 <h3>{{ $s->judul }}</h3>
-                <p>{{ $s->tanggal }}</p>
+                <p> <img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $s->tanggal }}</p>
                 <a href="{{ route('penghargaan.show', $s->id) }}" class="btn btn-primary">Baca Lebih Lanjut</a>
             </div>
             @endforeach

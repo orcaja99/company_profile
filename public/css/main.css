@@ -43,7 +43,7 @@
 
 .nav-item a:hover {
   color: black !important;
-  background-color: white !important;
+  background-color: lightgray !important;
 }
 
 .dropdown-menu {

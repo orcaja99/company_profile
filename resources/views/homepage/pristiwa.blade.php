@@ -27,7 +27,7 @@
                 <div class="mb-4"> 
                     <img src="{{ asset('storage/images/' . $pristiwa->gambar) }}" alt="Content Image" width="250" height="200">
                     <h3>{{ $pristiwa->judul }}</h3>
-                    <p>{{ $pristiwa->tanggal }}</p>
+                    <p><img src="{{ asset('storage/assets/kalender.png') }}" alt="Calendar Icon" width="20" height="20"> {{ $pristiwa->tanggal }}</p>
                     <p>{{ $pristiwa->keterangan }}</p>
                     <a href="{{ route('pristiwa.show', $pristiwa->id) }}" class="btn btn-primary">Baca Lebih Lanjut</a> 
                 </div>

@@ -17,7 +17,7 @@
 }
 
 .custom-bg-color {
-  background-color: #1ba9f5; /* Ganti dengan warna yang Anda inginkan */
+  background-color: grey !important
 }
 
 
@@ -60,5 +60,6 @@
   }
 
   .nav-item .active {
-    background-color: lightblue;
+    background-color: white;
   }
+
