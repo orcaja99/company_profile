@@ -9,6 +9,18 @@
   border-bottom: 2px solid gray;
 }
 
+/* Default state
+.navbar-logo-default {
+  background-image: url('/storage/assets/logo.png');
+  
+} */
+
+/* Scrolled state */
+.navbar-logo-scrolled {
+  background-image: url('/storage/assets/logo_pertama.png');
+  
+}
+
 
 .navbar .nav-link {
   color: white !important;
@@ -30,8 +42,8 @@
 }
 
 .nav-item a:hover {
-  color: white !important;
-  background-color: gray;
+  color: black !important;
+  background-color: white !important;
 }
 
 .dropdown-menu {
@@ -236,14 +248,13 @@ h2 a:hover{
 
 .carousel-caption {
   position: absolute;
-  bottom: 0; /* Menempatkan teks di bagian bawah slide */
+  bottom: 0; 
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5); /* Menambahkan latar belakang semi-transparan */
+  background: rgba(0, 0, 0, 0.5); 
   color: white;
-  padding: 10px; /* Menambahkan jarak sekitar teks */
+  padding: 10px; 
 }
-
 
 .carousel-caption h3 {
   font-size: 24px;
@@ -291,6 +302,27 @@ h2 a:hover{
 pre{
   font-style: normal;
   font-family: "Arial", "Helvetica Neue";
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 400;
+  padding: 10px;
+}
+
+.smm h3{
+  align-self: center;
+  padding-bottom: 20px;
+}
+
+.dsb h3{
+  align-self: center;
+  padding-bottom: 20px;
+}
+
+.sejarah h3{
+  align-self: center;
+  padding-bottom: 20px;
+}
+
+.vms h3{
+  align-self: center;
+  padding-bottom: 20px;
 }

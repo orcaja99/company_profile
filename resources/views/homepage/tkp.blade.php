@@ -11,7 +11,7 @@
       <div class="text-content-bc  col-12 text-center">
           <h2 id="custom-title">Tabel Klasifikasi Pelanggan dan Tarif Air Berdasarkan Golongan Pelanggan PDAM 2018</h2>
           <ol>
-              <li><a href="homepage.sliderfoto">Home&nbsp; </a></li>
+            <li><a href="{{ route('homepage') }}" class="white-link">Home&nbsp; </a></li>
               <li>/&nbsp;Info Pelanggan</li>
           </ol>
       </div>

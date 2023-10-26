@@ -10,16 +10,18 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 
 
-var mySwiper = new Swiper('.swiper-container', {
-    // Pengaturan Swiper.js
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-});
+// var mySwiper = new Swiper('.swiper-container', {
+//     // Pengaturan Swiper.js
+//     slidesPerView: 1,
+//     spaceBetween: 10,
+//     pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//     },
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//     },
+// });
+
+

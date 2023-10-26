@@ -80,12 +80,9 @@
     </div>
 </div>
 
-
-
-    {{ $berita->links() }} <!-- Menampilkan halaman paginasi -->
 </div>
 
-
+root@dockerfile:~/latihan# vim Dockerfile
     
     
 

@@ -35,7 +35,7 @@
             @endforeach
         </div>
     
-        {{ $beritap->links() }} <!-- Menampilkan halaman paginasi -->
+        @include('pagination', ['paginator' => $beritap])
     </div>
 </section>
 

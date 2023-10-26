@@ -12,8 +12,12 @@
 <body>
   <div class="container-fluid min-vh-100">
     <div class="row">
-      <div class="col-md-2 bg-dark text-light py-4 sidebar" id="sidebar">
-        <h2 class= "title">Admin Dashboard</h2>
+      <div class="custom-bg-color col-md-2 text-light py-4 sidebar" id="sidebar">
+        <div class="dashboard-header">
+            <div class="dashboard-logo">
+                <img src="{{ asset('storage/assets/logo_pertama.png') }}" alt="Logo">
+            </div>
+        </div>
         <div class="title-line"></div>
         <ul class="nav flex-column">
           <li class="nav-item">

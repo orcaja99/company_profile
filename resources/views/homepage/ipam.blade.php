@@ -11,7 +11,7 @@
       <div class="text-content-bc  col-12 text-center">
           <h2 id="custom-title">Instalasi Pengolahan Air Minum</h2>
           <ol>
-              <li><a href="homepage.sliderfoto">Home&nbsp; </a></li>
+              <li><a href="{{ route('homepage') }}" class="white-link">Home&nbsp; </a></li>
               <li>/&nbsp;Infrastruktur</li>
           </ol>
       </div>

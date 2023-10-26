@@ -1,3 +1,26 @@
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.dashboard-logo img {
+  max-width: 200px;
+}
+
+.dashboard-title {
+  font-size: 16px; 
+  margin-top: 10px;
+  text-align: center;
+}
+
+.custom-bg-color {
+  background-color: #1ba9f5; /* Ganti dengan warna yang Anda inginkan */
+}
+
+
 .sidebar {
     min-height: 100vh;
     /* display: flex;

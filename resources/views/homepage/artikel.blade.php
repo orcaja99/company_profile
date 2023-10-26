@@ -34,8 +34,7 @@
             </div>
             @endforeach
         </div>
-    
-        {{ $berita->links() }} <!-- Menampilkan halaman paginasi -->
+        @include('pagination', ['paginator' => $berita])
     </div>
     
 </section>

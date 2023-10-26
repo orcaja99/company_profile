@@ -11,7 +11,7 @@ class BeritaController extends Controller
 
     public static function getData()
     {
-        $berita = Berita::paginate(6);
+        $berita = Berita::paginate(4);
         return $berita; // Mengembalikan data sebagai koleksi
     }
 

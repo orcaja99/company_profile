@@ -12,7 +12,7 @@ class BeritapController extends Controller
 
     public static function getData()
     {
-        $beritap = Beritap::paginate(6);
+        $beritap = Beritap::paginate(4);
         return $beritap; // Mengembalikan data sebagai koleksi
     }
 

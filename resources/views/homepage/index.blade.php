@@ -16,7 +16,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <a href="{{ route('homepage') }}">
-        <img src="{{ asset('storage/assets/logo_pertama.png') }}" class="d-block">
+        <img id="navbar-logo" class="d-block navbar-logo-default" src="{{ asset('storage/assets/logo.png') }}" height="50">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -146,6 +146,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="{{ asset('js/dashboard.js') }}"></script>
+<script src="{{ asset('js/navbar_logo.js') }}"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
